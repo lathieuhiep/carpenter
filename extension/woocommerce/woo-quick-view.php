@@ -3,11 +3,11 @@
 /*
 * Start quick view product
 */
-function basictheme_button_quick_view() {
+function carpenter_button_quick_view() {
 
 ?>
 
-    <a class="btn-quick-view-product" href="#" title="<?php esc_attr_e( 'Quick view product', 'basictheme' ); ?>" data-id-product="<?php echo esc_attr( get_the_ID() ); ?>" data-toggle="modal" data-target="#mode-quick-view-product">
+    <a class="btn-quick-view-product" href="#" title="<?php esc_attr_e( 'Quick view product', 'carpenter' ); ?>" data-id-product="<?php echo esc_attr( get_the_ID() ); ?>" data-toggle="modal" data-target="#mode-quick-view-product">
         <i class="fas fa-search"></i>
     </a>
 
@@ -15,7 +15,7 @@ function basictheme_button_quick_view() {
 
 }
 
-function basictheme_popup_quick_view_product() {
+function carpenter_popup_quick_view_product() {
 
 ?>
 
@@ -43,10 +43,10 @@ function basictheme_popup_quick_view_product() {
 }
 
 /* Start ajax quick view product */
-add_action( 'wp_ajax_nopriv_basictheme_get_quick_view_product', 'basictheme_get_quick_view_product' );
-add_action( 'wp_ajax_basictheme_get_quick_view_product', 'basictheme_get_quick_view_product' );
+add_action( 'wp_ajax_nopriv_carpenter_get_quick_view_product', 'carpenter_get_quick_view_product' );
+add_action( 'wp_ajax_carpenter_get_quick_view_product', 'carpenter_get_quick_view_product' );
 
-function basictheme_get_quick_view_product() {
+function carpenter_get_quick_view_product() {
 
     $product_id   =   $_POST['product_id'];
 

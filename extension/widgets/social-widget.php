@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class basictheme_social_widget extends WP_Widget {
+class carpenter_social_widget extends WP_Widget {
 
 	/**
 	 * Widget setup.
@@ -15,12 +15,12 @@ class basictheme_social_widget extends WP_Widget {
 
     public function __construct() {
 
-        $basictheme_social_widget_ops = array(
-            'classname'     =>  'basictheme_social_widget',
+        $carpenter_social_widget_ops = array(
+            'classname'     =>  'carpenter_social_widget',
             'description'   =>  'A widget that displays your social icons',
         );
 
-        parent::__construct( 'basictheme_social_widget', 'Basic Theme: Social Icons', $basictheme_social_widget_ops );
+        parent::__construct( 'carpenter_social_widget', 'Basic Theme: Social Icons', $carpenter_social_widget_ops );
 
     }
 
@@ -41,7 +41,7 @@ class basictheme_social_widget extends WP_Widget {
     ?>
 		
         <div class="social-widget social-network-toTopFromBottom">
-            <?php basictheme_get_social_url(); ?>
+            <?php carpenter_get_social_url(); ?>
         </div>
 
     <?php
@@ -65,14 +65,14 @@ class basictheme_social_widget extends WP_Widget {
 		<!-- Widget Title: Text Input -->
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
-                <?php esc_html_e( 'Title:', 'basictheme' ); ?>
+                <?php esc_html_e( 'Title:', 'carpenter' ); ?>
             </label>
 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:90%;" />
 		</p>
 		
 		<p>
-            <?php esc_html_e( 'Note: Set your social links in the basictheme Options', 'basictheme' ); ?>
+            <?php esc_html_e( 'Note: Set your social links in the carpenter Options', 'carpenter' ); ?>
         </p>
 
 	<?php
@@ -98,8 +98,8 @@ class basictheme_social_widget extends WP_Widget {
 }
 
 // Register social widget
-function basictheme_social_widget_register() {
-    register_widget( 'basictheme_social_widget' );
+function carpenter_social_widget_register() {
+    register_widget( 'carpenter_social_widget' );
 }
 
-add_action( 'widgets_init', 'basictheme_social_widget_register' );
+add_action( 'widgets_init', 'carpenter_social_widget_register' );

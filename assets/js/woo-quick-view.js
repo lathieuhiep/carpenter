@@ -23,7 +23,7 @@
             type: 'POST',
             data: ({
 
-                action: 'basictheme_get_quick_view_product',
+                action: 'carpenter_get_quick_view_product',
                 product_id: product_id
 
             }),

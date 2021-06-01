@@ -6,18 +6,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 use Elementor\Core\Schemes;
 
-class basictheme_widget_post_carousel extends Widget_Base {
+class carpenter_widget_post_carousel extends Widget_Base {
 
     public function get_categories() {
-        return array( 'basictheme_widgets' );
+        return array( 'carpenter_widgets' );
     }
 
     public function get_name() {
-        return 'basictheme-post-carousel';
+        return 'carpenter-post-carousel';
     }
 
     public function get_title() {
-        return esc_html__( 'Posts Carousel', 'basictheme' );
+        return esc_html__( 'Posts Carousel', 'carpenter' );
     }
 
     public function get_icon() {
@@ -25,7 +25,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return ['basictheme-elementor-custom'];
+        return ['carpenter-elementor-custom'];
     }
 
     protected function _register_controls() {
@@ -34,16 +34,16 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->start_controls_section(
             'section_query',
             [
-                'label' =>  esc_html__( 'Query', 'basictheme' )
+                'label' =>  esc_html__( 'Query', 'carpenter' )
             ]
         );
 
         $this->add_control(
             'select_cat',
             [
-                'label'         =>  esc_html__( 'Select Category', 'basictheme' ),
+                'label'         =>  esc_html__( 'Select Category', 'carpenter' ),
                 'type'          =>  Controls_Manager::SELECT2,
-                'options'       =>  basictheme_check_get_cat( 'category' ),
+                'options'       =>  carpenter_check_get_cat( 'category' ),
                 'multiple'      =>  true,
                 'label_block'   =>  true
             ]
@@ -52,7 +52,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'limit',
             [
-                'label'     =>  esc_html__( 'Number of Posts', 'basictheme' ),
+                'label'     =>  esc_html__( 'Number of Posts', 'carpenter' ),
                 'type'      =>  Controls_Manager::NUMBER,
                 'default'   =>  6,
                 'min'       =>  1,
@@ -64,14 +64,14 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'order_by',
             [
-                'label'     =>  esc_html__( 'Order By', 'basictheme' ),
+                'label'     =>  esc_html__( 'Order By', 'carpenter' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'id',
                 'options'   =>  [
-                    'id'    =>  esc_html__( 'Post ID', 'basictheme' ),
-                    'title' =>  esc_html__( 'Title', 'basictheme' ),
-                    'date'  =>  esc_html__( 'Date', 'basictheme' ),
-                    'rand'  =>  esc_html__( 'Random', 'basictheme' ),
+                    'id'    =>  esc_html__( 'Post ID', 'carpenter' ),
+                    'title' =>  esc_html__( 'Title', 'carpenter' ),
+                    'date'  =>  esc_html__( 'Date', 'carpenter' ),
+                    'rand'  =>  esc_html__( 'Random', 'carpenter' ),
                 ],
             ]
         );
@@ -79,12 +79,12 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'order',
             [
-                'label'     =>  esc_html__( 'Order', 'basictheme' ),
+                'label'     =>  esc_html__( 'Order', 'carpenter' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'ASC',
                 'options'   =>  [
-                    'ASC'   =>  esc_html__( 'Ascending', 'basictheme' ),
-                    'DESC'  =>  esc_html__( 'Descending', 'basictheme' ),
+                    'ASC'   =>  esc_html__( 'Ascending', 'carpenter' ),
+                    'DESC'  =>  esc_html__( 'Descending', 'carpenter' ),
                 ],
             ]
         );
@@ -92,15 +92,15 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'show_excerpt',
             [
-                'label'     =>  esc_html__( 'Show excerpt', 'basictheme' ),
+                'label'     =>  esc_html__( 'Show excerpt', 'carpenter' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     '1' => [
-                        'title' =>  esc_html__( 'Yes', 'basictheme' ),
+                        'title' =>  esc_html__( 'Yes', 'carpenter' ),
                         'icon'  =>  'fa fa-check',
                     ],
                     '0' => [
-                        'title' =>  esc_html__( 'No', 'basictheme' ),
+                        'title' =>  esc_html__( 'No', 'carpenter' ),
                         'icon'  =>  'fa fa-ban',
                     ]
                 ],
@@ -111,7 +111,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'excerpt_length',
             [
-                'label'     =>  esc_html__( 'Excerpt Words', 'basictheme' ),
+                'label'     =>  esc_html__( 'Excerpt Words', 'carpenter' ),
                 'type'      =>  Controls_Manager::NUMBER,
                 'default'   =>  '10',
                 'condition' =>  [
@@ -126,7 +126,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->start_controls_section(
             'section_layout',
             [
-                'label' =>  esc_html__( 'Layout Settings', 'basictheme' )
+                'label' =>  esc_html__( 'Layout Settings', 'carpenter' )
             ]
         );
 
@@ -134,9 +134,9 @@ class basictheme_widget_post_carousel extends Widget_Base {
 		    'loop',
 		    [
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label'         =>  esc_html__('Loop Slider ?', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
+			    'label'         =>  esc_html__('Loop Slider ?', 'carpenter'),
+			    'label_off'     =>  esc_html__('No', 'carpenter'),
+			    'label_on'      =>  esc_html__('Yes', 'carpenter'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -145,10 +145,10 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'autoplay',
 		    [
-			    'label'         =>  esc_html__('Autoplay?', 'basictheme'),
+			    'label'         =>  esc_html__('Autoplay?', 'carpenter'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
+			    'label_off'     =>  esc_html__('No', 'carpenter'),
+			    'label_on'      =>  esc_html__('Yes', 'carpenter'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'no',
 		    ]
@@ -157,10 +157,10 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'nav',
 		    [
-			    'label'         =>  esc_html__('Nav Slider', 'basictheme'),
+			    'label'         =>  esc_html__('Nav Slider', 'carpenter'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
+			    'label_on'      =>  esc_html__('Yes', 'carpenter'),
+			    'label_off'     =>  esc_html__('No', 'carpenter'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -169,10 +169,10 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'dots',
 		    [
-			    'label'         =>  esc_html__('Dots Slider', 'basictheme'),
+			    'label'         =>  esc_html__('Dots Slider', 'carpenter'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
+			    'label_on'      =>  esc_html__('Yes', 'carpenter'),
+			    'label_off'     =>  esc_html__('No', 'carpenter'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -181,7 +181,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  30,
 			    'min'       =>  0,
@@ -193,7 +193,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_1200',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 1200px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 1200px', 'carpenter' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -202,7 +202,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'item',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  3,
 			    'min'       =>  1,
@@ -214,7 +214,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_992',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 992px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 992px', 'carpenter' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -223,7 +223,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_992',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -235,7 +235,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_768',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 768px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 768px', 'carpenter' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -244,7 +244,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_768',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -256,7 +256,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_568',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 568px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 568px', 'carpenter' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -265,7 +265,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_568',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -277,7 +277,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item_568',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  15,
 			    'min'       =>  0,
@@ -289,7 +289,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'max_width_567',
 		    [
-			    'label'     =>  esc_html__( 'Max Width 567px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Max Width 567px', 'carpenter' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -298,7 +298,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_567',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  1,
 			    'min'       =>  1,
@@ -310,7 +310,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item_567',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'carpenter' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  0,
 			    'min'       =>  0,
@@ -325,7 +325,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->start_controls_section(
             'section_style_post',
             [
-                'label' => esc_html__( 'Color & Typography', 'basictheme' ),
+                'label' => esc_html__( 'Color & Typography', 'carpenter' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -334,7 +334,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'title_post_options',
             [
-                'label'     =>  esc_html__( 'Title Post', 'basictheme' ),
+                'label'     =>  esc_html__( 'Title Post', 'carpenter' ),
                 'type'      =>  Controls_Manager::HEADING,
                 'separator' =>  'before',
             ]
@@ -343,7 +343,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'title_post_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'carpenter' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -355,7 +355,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'title_post_color_hover',
             [
-                'label'     =>  esc_html__( 'Color Hover', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color Hover', 'carpenter' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -375,23 +375,23 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'title_post_alignment',
             [
-                'label'     =>  esc_html__( 'Title Alignment', 'basictheme' ),
+                'label'     =>  esc_html__( 'Title Alignment', 'carpenter' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'carpenter' ),
                         'icon'  =>  'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'carpenter' ),
                         'icon'  =>  'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'carpenter' ),
                         'icon'  =>  'fa fa-align-right',
                     ],
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'carpenter' ),
                         'icon'  =>  'fa fa-align-justify',
                     ],
                 ],
@@ -406,7 +406,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'excerpt_post_options',
             [
-                'label'     =>  esc_html__( 'Excerpt Post', 'basictheme' ),
+                'label'     =>  esc_html__( 'Excerpt Post', 'carpenter' ),
                 'type'      =>  Controls_Manager::HEADING,
                 'separator' =>  'before',
             ]
@@ -415,7 +415,7 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'excerpt_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'carpenter' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -435,23 +435,23 @@ class basictheme_widget_post_carousel extends Widget_Base {
         $this->add_control(
             'excerpt_alignment',
             [
-                'label'     =>  esc_html__( 'Excerpt Alignment', 'basictheme' ),
+                'label'     =>  esc_html__( 'Excerpt Alignment', 'carpenter' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'carpenter' ),
                         'icon'  =>  'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'carpenter' ),
                         'icon'  =>  'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'carpenter' ),
                         'icon'  =>  'fa fa-align-right',
                     ],
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'carpenter' ),
                         'icon'  =>  'fa fa-align-justify',
                     ],
                 ],
@@ -590,4 +590,4 @@ class basictheme_widget_post_carousel extends Widget_Base {
 
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new basictheme_widget_post_carousel );
+Plugin::instance()->widgets_manager->register_widget_type( new carpenter_widget_post_carousel );

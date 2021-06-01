@@ -1,26 +1,26 @@
 <?php
 
-global $basictheme_options;
+global $carpenter_options;
 
-$basictheme_on_off_share_single = $basictheme_options['basictheme_on_off_share_single'];
+$carpenter_on_off_share_single = $carpenter_options['carpenter_on_off_share_single'];
 
 ?>
 
 <div id="post-<?php the_ID() ?>" <?php post_class( 'site-post-single-item' ); ?>>
-    <?php basictheme_post_formats(); ?>
+    <?php carpenter_post_formats(); ?>
 
     <div class="site-post-content">
         <h2 class="site-post-title">
             <?php the_title(); ?>
         </h2>
 
-        <?php basictheme_post_meta(); ?>
+        <?php carpenter_post_meta(); ?>
 
         <div class="site-post-excerpt">
             <?php
             the_content();
 
-            basictheme_link_page();
+            carpenter_link_page();
             ?>
         </div>
 
@@ -30,7 +30,7 @@ $basictheme_on_off_share_single = $basictheme_options['basictheme_on_off_share_s
 
                 <p class="site-post-category">
                     <?php
-                    esc_html_e('Category: ','basictheme');
+                    esc_html_e('Category: ','carpenter');
                     the_category( ' ' );
                     ?>
                 </p>
@@ -45,7 +45,7 @@ $basictheme_on_off_share_single = $basictheme_options['basictheme_on_off_share_s
 
                 <p class="site-post-tag">
                     <?php
-                    esc_html_e( 'Tag: ','basictheme' );
+                    esc_html_e( 'Tag: ','carpenter' );
                     the_tags('',' ');
                     ?>
                 </p>
@@ -57,9 +57,9 @@ $basictheme_on_off_share_single = $basictheme_options['basictheme_on_off_share_s
 
     <?php
 
-    if ( $basictheme_on_off_share_single == 1 || $basictheme_on_off_share_single == null ) :
+    if ( $carpenter_on_off_share_single == 1 || $carpenter_on_off_share_single == null ) :
 
-        basictheme_post_share();
+        carpenter_post_share();
 
     endif;
 
@@ -67,7 +67,7 @@ $basictheme_on_off_share_single = $basictheme_options['basictheme_on_off_share_s
 </div>
 
 <?php
-basictheme_comment_form();
+carpenter_comment_form();
 
 get_template_part( 'template-parts/post/inc','related-post' );
 

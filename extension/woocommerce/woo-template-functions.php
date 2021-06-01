@@ -4,9 +4,9 @@
  * General functions used to integrate this theme with WooCommerce.
  */
 
-add_action( 'after_setup_theme', 'basictheme_shop_setup' );
+add_action( 'after_setup_theme', 'carpenter_shop_setup' );
 
-function basictheme_shop_setup() {
+function carpenter_shop_setup() {
 
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
@@ -16,28 +16,28 @@ function basictheme_shop_setup() {
 }
 
 /* Start limit product */
-add_filter('loop_shop_per_page', 'basictheme_show_products_per_page');
+add_filter('loop_shop_per_page', 'carpenter_show_products_per_page');
 
-function basictheme_show_products_per_page() {
-    global $basictheme_options;
+function carpenter_show_products_per_page() {
+    global $carpenter_options;
 
-    $basictheme_product_limit = $basictheme_options['basictheme_product_limit'];
+    $carpenter_product_limit = $carpenter_options['carpenter_product_limit'];
 
-    return $basictheme_product_limit;
+    return $carpenter_product_limit;
 
 }
 /* End limit product */
 
 /* Start Change number or products per row */
-add_filter('loop_shop_columns', 'basictheme_loop_columns_product');
+add_filter('loop_shop_columns', 'carpenter_loop_columns_product');
 
-function basictheme_loop_columns_product() {
-    global $basictheme_options;
+function carpenter_loop_columns_product() {
+    global $carpenter_options;
 
-    $basictheme_products_per_row = $basictheme_options['basictheme_products_per_row'];
+    $carpenter_products_per_row = $carpenter_options['carpenter_products_per_row'];
 
-    if ( !empty( $basictheme_products_per_row ) ) :
-        return $basictheme_products_per_row;
+    if ( !empty( $carpenter_products_per_row ) ) :
+        return $carpenter_products_per_row;
     else:
         return 4;
     endif;
@@ -46,9 +46,9 @@ function basictheme_loop_columns_product() {
 /* End Change number or products per row */
 
 /* Start get cart */
-if ( ! function_exists( 'basictheme_get_cart' ) ):
+if ( ! function_exists( 'carpenter_get_cart' ) ):
 
-    function basictheme_get_cart() {
+    function carpenter_get_cart() {
 
     ?>
 
@@ -68,19 +68,19 @@ if ( ! function_exists( 'basictheme_get_cart' ) ):
 endif;
 
 /* To ajaxify your cart viewer */
-add_filter( 'woocommerce_add_to_cart_fragments', 'basictheme_add_to_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'carpenter_add_to_cart_fragment' );
 
-if ( ! function_exists( 'basictheme_add_to_cart_fragment' ) ) :
+if ( ! function_exists( 'carpenter_add_to_cart_fragment' ) ) :
 
-    function basictheme_add_to_cart_fragment( $basictheme_fragments ) {
+    function carpenter_add_to_cart_fragment( $carpenter_fragments ) {
 
         ob_start();
 
-        do_action( 'basictheme_woo_shopping_cart' );
+        do_action( 'carpenter_woo_shopping_cart' );
 
-        $basictheme_fragments['.cart-box'] = ob_get_clean();
+        $carpenter_fragments['.cart-box'] = ob_get_clean();
 
-        return $basictheme_fragments;
+        return $carpenter_fragments;
 
     }
 
@@ -88,17 +88,17 @@ endif;
 /* End get cart */
 
 /* Start Sidebar Shop */
-if ( ! function_exists( 'basictheme_woo_get_sidebar' ) ) :
+if ( ! function_exists( 'carpenter_woo_get_sidebar' ) ) :
 
-    function basictheme_woo_get_sidebar() {
+    function carpenter_woo_get_sidebar() {
 
-	    global $basictheme_options;
-	    $basictheme_sidebar_woo_position = $basictheme_options['basictheme_sidebar_woo'];
+	    global $carpenter_options;
+	    $carpenter_sidebar_woo_position = $carpenter_options['carpenter_sidebar_woo'];
 
 
-	    if( is_active_sidebar( 'basictheme-sidebar-wc' ) ):
+	    if( is_active_sidebar( 'carpenter-sidebar-wc' ) ):
 
-	        if ( $basictheme_sidebar_woo_position == 'left' ) :
+	        if ( $carpenter_sidebar_woo_position == 'left' ) :
 		        $class_order = 'order-md-1';
 	        else:
 		        $class_order = 'order-md-2';
@@ -106,7 +106,7 @@ if ( ! function_exists( 'basictheme_woo_get_sidebar' ) ) :
     ?>
 
             <aside class="col-12 col-md-4 col-lg-3 order-2 <?php echo esc_attr( $class_order ); ?>">
-                <?php dynamic_sidebar( 'basictheme-sidebar-wc' ); ?>
+                <?php dynamic_sidebar( 'carpenter-sidebar-wc' ); ?>
             </aside>
 
     <?php
@@ -120,14 +120,14 @@ endif;
 * Lay Out Shop
 */
 
-if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_main_content' ) ) :
     /**
      * Before Content
      * Wraps all WooCommerce content in wrappers which match the theme markup
      */
-    function basictheme_woo_before_main_content() {
-        global $basictheme_options;
-        $basictheme_sidebar_woo_position = $basictheme_options['basictheme_sidebar_woo'];
+    function carpenter_woo_before_main_content() {
+        global $carpenter_options;
+        $carpenter_sidebar_woo_position = $carpenter_options['carpenter_sidebar_woo'];
 
     ?>
 
@@ -139,13 +139,13 @@ if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
                     /**
                      * woocommerce_sidebar hook.
                      *
-                     * @hooked basictheme_woo_sidebar - 10
+                     * @hooked carpenter_woo_sidebar - 10
                      */
-                    do_action( 'basictheme_woo_sidebar' );
+                    do_action( 'carpenter_woo_sidebar' );
 
                 ?>
 
-                    <div class="<?php echo is_active_sidebar( 'basictheme-sidebar-wc' ) && $basictheme_sidebar_woo_position != 'hide' ? 'col-12 col-md-8 col-lg-9 order-1 has-sidebar' : 'col-md-12'; ?>">
+                    <div class="<?php echo is_active_sidebar( 'carpenter-sidebar-wc' ) && $carpenter_sidebar_woo_position != 'hide' ? 'col-12 col-md-8 col-lg-9 order-1 has-sidebar' : 'col-md-12'; ?>">
 
     <?php
 
@@ -153,14 +153,14 @@ if ( ! function_exists( 'basictheme_woo_before_main_content' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_main_content' ) ) :
+if ( ! function_exists( 'carpenter_woo_after_main_content' ) ) :
     /**
      * After Content
      * Closes the wrapping divs
      */
-    function basictheme_woo_after_main_content() {
-        global $basictheme_options;
-        $basictheme_sidebar_woo_position = $basictheme_options['basictheme_sidebar_woo'];
+    function carpenter_woo_after_main_content() {
+        global $carpenter_options;
+        $carpenter_sidebar_woo_position = $carpenter_options['carpenter_sidebar_woo'];
     ?>
 
                     </div><!-- .col-md-9 -->
@@ -174,14 +174,14 @@ if ( ! function_exists( 'basictheme_woo_after_main_content' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_product_thumbnail_open' ) ) :
+if ( ! function_exists( 'carpenter_woo_product_thumbnail_open' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_product_thumbnail_open - 5
+     * @hooked carpenter_woo_product_thumbnail_open - 5
      */
 
-    function basictheme_woo_product_thumbnail_open() {
+    function carpenter_woo_product_thumbnail_open() {
 
 ?>
 
@@ -193,16 +193,16 @@ if ( ! function_exists( 'basictheme_woo_product_thumbnail_open' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_product_thumbnail_close' ) ) :
+if ( ! function_exists( 'carpenter_woo_product_thumbnail_close' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_product_thumbnail_close - 15
+     * @hooked carpenter_woo_product_thumbnail_close - 15
      */
 
-    function basictheme_woo_product_thumbnail_close() {
+    function carpenter_woo_product_thumbnail_close() {
 
-        do_action( 'basictheme_woo_button_quick_view' );
+        do_action( 'carpenter_woo_button_quick_view' );
 ?>
 
         </div><!-- .site-shop__product--item-image -->
@@ -215,14 +215,14 @@ if ( ! function_exists( 'basictheme_woo_product_thumbnail_close' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_get_product_title' ) ) :
+if ( ! function_exists( 'carpenter_woo_get_product_title' ) ) :
     /**
      * Hook: woocommerce_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_get_product_title - 10
+     * @hooked carpenter_woo_get_product_title - 10
      */
 
-    function basictheme_woo_get_product_title() {
+    function carpenter_woo_get_product_title() {
     ?>
         <h2 class="woocommerce-loop-product__title">
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
@@ -233,27 +233,27 @@ if ( ! function_exists( 'basictheme_woo_get_product_title' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_shop_loop_item_title' ) ) :
+if ( ! function_exists( 'carpenter_woo_after_shop_loop_item_title' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item_title.
      *
-     * @hooked basictheme_woo_after_shop_loop_item_title - 15
+     * @hooked carpenter_woo_after_shop_loop_item_title - 15
      */
-    function basictheme_woo_after_shop_loop_item_title() {
+    function carpenter_woo_after_shop_loop_item_title() {
     ?>
         </div><!-- .site-shop__product--item-content -->
     <?php
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_open' ) ) :
+if ( ! function_exists( 'carpenter_woo_loop_add_to_cart_open' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_loop_add_to_cart_open - 4
+     * @hooked carpenter_woo_loop_add_to_cart_open - 4
      */
 
-    function basictheme_woo_loop_add_to_cart_open() {
+    function carpenter_woo_loop_add_to_cart_open() {
     ?>
         <div class="site-shop__product-add-to-cart">
     <?php
@@ -261,14 +261,14 @@ if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_open' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_close' ) ) :
+if ( ! function_exists( 'carpenter_woo_loop_add_to_cart_close' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_loop_add_to_cart_close - 12
+     * @hooked carpenter_woo_loop_add_to_cart_close - 12
      */
 
-    function basictheme_woo_loop_add_to_cart_close() {
+    function carpenter_woo_loop_add_to_cart_close() {
     ?>
         </div><!-- .site-shop__product-add-to-cart -->
     <?php
@@ -276,13 +276,13 @@ if ( ! function_exists( 'basictheme_woo_loop_add_to_cart_close' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_item' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_shop_loop_item' ) ) :
     /**
      * Hook: woocommerce_before_shop_loop_item.
      *
-     * @hooked basictheme_woo_before_shop_loop_item - 5
+     * @hooked carpenter_woo_before_shop_loop_item - 5
      */
-    function basictheme_woo_before_shop_loop_item() {
+    function carpenter_woo_before_shop_loop_item() {
     ?>
 
         <div class="site-shop__product--item">
@@ -291,13 +291,13 @@ if ( ! function_exists( 'basictheme_woo_before_shop_loop_item' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_shop_loop_item' ) ) :
+if ( ! function_exists( 'carpenter_woo_after_shop_loop_item' ) ) :
     /**
      * Hook: woocommerce_after_shop_loop_item.
      *
-     * @hooked basictheme_woo_after_shop_loop_item - 15
+     * @hooked carpenter_woo_after_shop_loop_item - 15
      */
-    function basictheme_woo_after_shop_loop_item() {
+    function carpenter_woo_after_shop_loop_item() {
     ?>
 
         </div><!-- .site-shop__product--item -->
@@ -306,14 +306,14 @@ if ( ! function_exists( 'basictheme_woo_after_shop_loop_item' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_open' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_shop_loop_open' ) ) :
     /**
      * Before Shop Loop
      * woocommerce_before_shop_loop hook.
      *
-     * @hooked basictheme_woo_before_shop_loop_open - 5
+     * @hooked carpenter_woo_before_shop_loop_open - 5
      */
-    function basictheme_woo_before_shop_loop_open() {
+    function carpenter_woo_before_shop_loop_open() {
 
     ?>
 
@@ -324,14 +324,14 @@ if ( ! function_exists( 'basictheme_woo_before_shop_loop_open' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_shop_loop_close' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_shop_loop_close' ) ) :
     /**
      * Before Shop Loop
      * woocommerce_before_shop_loop hook.
      *
-     * @hooked basictheme_woo_before_shop_loop_close - 35
+     * @hooked carpenter_woo_before_shop_loop_close - 35
      */
-    function basictheme_woo_before_shop_loop_close() {
+    function carpenter_woo_before_shop_loop_close() {
 
     ?>
 
@@ -346,17 +346,17 @@ endif;
 * Single Shop
 */
 
-if ( ! function_exists( 'basictheme_woo_before_single_product' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_single_product' ) ) :
 
     /**
      * Before Content Single  product
      *
      * woocommerce_before_single_product hook.
      *
-     * @hooked basictheme_woo_before_single_product - 5
+     * @hooked carpenter_woo_before_single_product - 5
      */
 
-    function basictheme_woo_before_single_product() {
+    function carpenter_woo_before_single_product() {
 
     ?>
 
@@ -368,17 +368,17 @@ if ( ! function_exists( 'basictheme_woo_before_single_product' ) ) :
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_after_single_product' ) ) :
+if ( ! function_exists( 'carpenter_woo_after_single_product' ) ) :
 
     /**
      * After Content Single  product
      *
      * woocommerce_after_single_product hook.
      *
-     * @hooked basictheme_woo_after_single_product - 30
+     * @hooked carpenter_woo_after_single_product - 30
      */
 
-    function basictheme_woo_after_single_product() {
+    function carpenter_woo_after_single_product() {
 
     ?>
 
@@ -390,16 +390,16 @@ if ( ! function_exists( 'basictheme_woo_after_single_product' ) ) :
 
 endif;
 
-if ( !function_exists( 'basictheme_woo_before_single_product_summary_open_warp' ) ) :
+if ( !function_exists( 'carpenter_woo_before_single_product_summary_open_warp' ) ) :
 
     /**
      * Before single product summary
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_open_warp - 1
+     * @hooked carpenter_woo_before_single_product_summary_open_warp - 1
      */
 
-    function basictheme_woo_before_single_product_summary_open_warp() {
+    function carpenter_woo_before_single_product_summary_open_warp() {
 
     ?>
 
@@ -411,16 +411,16 @@ if ( !function_exists( 'basictheme_woo_before_single_product_summary_open_warp' 
 
 endif;
 
-if ( !function_exists( 'basictheme_woo_after_single_product_summary_close_warp' ) ) :
+if ( !function_exists( 'carpenter_woo_after_single_product_summary_close_warp' ) ) :
 
     /**
      * After single product summary
      * woocommerce_after_single_product_summary hook.
      *
-     * @hooked basictheme_woo_after_single_product_summary_close_warp - 5
+     * @hooked carpenter_woo_after_single_product_summary_close_warp - 5
      */
 
-    function basictheme_woo_after_single_product_summary_close_warp() {
+    function carpenter_woo_after_single_product_summary_close_warp() {
 
     ?>
 
@@ -432,15 +432,15 @@ if ( !function_exists( 'basictheme_woo_after_single_product_summary_close_warp' 
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_single_product_summary_open' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_single_product_summary_open' ) ) :
 
     /**
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_open - 5
+     * @hooked carpenter_woo_before_single_product_summary_open - 5
      */
 
-    function basictheme_woo_before_single_product_summary_open() {
+    function carpenter_woo_before_single_product_summary_open() {
 
     ?>
 
@@ -452,15 +452,15 @@ if ( ! function_exists( 'basictheme_woo_before_single_product_summary_open' ) ) 
 
 endif;
 
-if ( ! function_exists( 'basictheme_woo_before_single_product_summary_close' ) ) :
+if ( ! function_exists( 'carpenter_woo_before_single_product_summary_close' ) ) :
 
     /**
      * woocommerce_before_single_product_summary hook.
      *
-     * @hooked basictheme_woo_before_single_product_summary_close - 30
+     * @hooked carpenter_woo_before_single_product_summary_close - 30
      */
 
-    function basictheme_woo_before_single_product_summary_close() {
+    function carpenter_woo_before_single_product_summary_close() {
 
     ?>
 

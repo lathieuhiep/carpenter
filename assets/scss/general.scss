@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
   font-size: 14px;
   color: $color-primary;
-  font-family: $font-family-text;
+  font-family: $font-family-body;
   font-weight: $font-weight-regular;
   word-break: break-word;
   @include flexbox();

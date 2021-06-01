@@ -4,14 +4,14 @@
  */
 require get_parent_theme_file_path( '/plugins/class-tgm-plugin-activation.php' );
 
-add_action( 'tgmpa_register', 'basictheme_register_required_plugins' );
-function basictheme_register_required_plugins() {
+add_action( 'tgmpa_register', 'carpenter_register_required_plugins' );
+function carpenter_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
-	$basictheme_plugins = array(
+	$carpenter_plugins = array(
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository
 		array(
@@ -64,8 +64,8 @@ function basictheme_register_required_plugins() {
 	 * Some of the strings are added into a sprintf, so see the comments at the
 	 * end of each line for what each argument will be.
 	 */
-	$basictheme_config = array(
-		'id'           => 'basictheme',          // Unique ID for hashing notices for multiple instances of TGMPA.
+	$carpenter_config = array(
+		'id'           => 'carpenter',          // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
@@ -77,5 +77,5 @@ function basictheme_register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table.
 	);
 
-	tgmpa( $basictheme_plugins, $basictheme_config );
+	tgmpa( $carpenter_plugins, $carpenter_config );
 }

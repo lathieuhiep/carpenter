@@ -2,50 +2,50 @@
 /**
  * Register Sidebar
  */
-add_action( 'widgets_init', 'basictheme_widgets_init');
+add_action( 'widgets_init', 'carpenter_widgets_init');
 
-function basictheme_widgets_init() {
+function carpenter_widgets_init() {
 
-	$basictheme_widgets_arr  =   array(
+	$carpenter_widgets_arr  =   array(
 
-		'basictheme-sidebar-main'    =>  array(
-			'name'              =>  esc_html__( 'Sidebar Main', 'basictheme' ),
-			'description'       =>  esc_html__( 'Display sidebar right or left on all page.', 'basictheme' )
+		'carpenter-sidebar-main'    =>  array(
+			'name'              =>  esc_html__( 'Sidebar Main', 'carpenter' ),
+			'description'       =>  esc_html__( 'Display sidebar right or left on all page.', 'carpenter' )
 		),
 
-		'basictheme-sidebar-wc' =>  array(
-			'name'              =>  esc_html__( 'Sidebar Woocommerce', 'basictheme' ),
-			'description'       =>  esc_html__( 'Display sidebar on page shop.', 'basictheme' )
+		'carpenter-sidebar-wc' =>  array(
+			'name'              =>  esc_html__( 'Sidebar Woocommerce', 'carpenter' ),
+			'description'       =>  esc_html__( 'Display sidebar on page shop.', 'carpenter' )
 		),
 
-		'basictheme-sidebar-footer-multi-column-1'   =>  array(
-			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1', 'basictheme' ),
-			'description'       =>  esc_html__('Display footer column 1 on all page.', 'basictheme' )
+		'carpenter-sidebar-footer-multi-column-1'   =>  array(
+			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 1', 'carpenter' ),
+			'description'       =>  esc_html__('Display footer column 1 on all page.', 'carpenter' )
 		),
 
-		'basictheme-sidebar-footer-multi-column-2'   =>  array(
-			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2', 'basictheme' ),
-			'description'       =>  esc_html__('Display footer column 2 on all page.', 'basictheme' )
+		'carpenter-sidebar-footer-multi-column-2'   =>  array(
+			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 2', 'carpenter' ),
+			'description'       =>  esc_html__('Display footer column 2 on all page.', 'carpenter' )
 		),
 
-		'basictheme-sidebar-footer-multi-column-3'   =>  array(
-			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 3', 'basictheme' ),
-			'description'       =>  esc_html__('Display footer column 3 on all page.', 'basictheme' )
+		'carpenter-sidebar-footer-multi-column-3'   =>  array(
+			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 3', 'carpenter' ),
+			'description'       =>  esc_html__('Display footer column 3 on all page.', 'carpenter' )
 		),
 
-		'basictheme-sidebar-footer-multi-column-4'   =>  array(
-			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 4', 'basictheme' ),
-			'description'       =>  esc_html__('Display footer column 4 on all page.', 'basictheme' )
+		'carpenter-sidebar-footer-multi-column-4'   =>  array(
+			'name'              =>  esc_html__( 'Sidebar Footer Multi Column 4', 'carpenter' ),
+			'description'       =>  esc_html__('Display footer column 4 on all page.', 'carpenter' )
 		)
 
 	);
 
-	foreach ( $basictheme_widgets_arr as $basictheme_widgets_id => $basictheme_widgets_value ) :
+	foreach ( $carpenter_widgets_arr as $carpenter_widgets_id => $carpenter_widgets_value ) :
 
 		register_sidebar( array(
-			'name'          =>  esc_attr( $basictheme_widgets_value['name'] ),
-			'id'            =>  esc_attr( $basictheme_widgets_id ),
-			'description'   =>  esc_attr( $basictheme_widgets_value['description'] ),
+			'name'          =>  esc_attr( $carpenter_widgets_value['name'] ),
+			'id'            =>  esc_attr( $carpenter_widgets_id ),
+			'description'   =>  esc_attr( $carpenter_widgets_value['description'] ),
 			'before_widget' =>  '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  =>  '</section>',
 			'before_title'  =>  '<h2 class="widget-title">',

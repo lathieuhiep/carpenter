@@ -1,19 +1,19 @@
 <?php
-global $basictheme_options;
+global $carpenter_options;
 
-$basictheme_logo_image_id    =   $basictheme_options['basictheme_logo_image']['id'];
-$basictheme_nav_top_sticky   =   $basictheme_options['basictheme_nav_top_sticky'] ? : 1;
+$carpenter_logo_image_id    =   $carpenter_options['carpenter_logo_image']['id'];
+$carpenter_nav_top_sticky   =   $carpenter_options['carpenter_nav_top_sticky'] ? : 1;
 ?>
 
-<nav id="site-navigation" class="main-navigation<?php echo esc_attr( $basictheme_nav_top_sticky == 1 ? ' active-sticky-nav' : '' ); ?>">
+<nav id="site-navigation" class="main-navigation<?php echo esc_attr( $carpenter_nav_top_sticky == 1 ? ' active-sticky-nav' : '' ); ?>">
     <div class="site-navbar navbar-expand-lg">
         <div class="container">
             <div class="site-navigation_warp d-flex justify-content-lg-end">
                 <div class="site-logo d-flex align-items-center">
                     <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
                         <?php
-                            if ( !empty( $basictheme_logo_image_id ) ) :
-                                echo wp_get_attachment_image( $basictheme_logo_image_id, 'full' );
+                            if ( !empty( $carpenter_logo_image_id ) ) :
+                                echo wp_get_attachment_image( $carpenter_logo_image_id, 'full' );
                             else :
                                 echo'<img class="logo-default" src="'.esc_url( get_theme_file_uri( '/assets/images/logo.png' ) ).'" alt="'.get_bloginfo('title').'" />';
                             endif;
@@ -44,7 +44,7 @@ $basictheme_nav_top_sticky   =   $basictheme_options['basictheme_nav_top_sticky'
                         <ul class="main-menu">
                             <li>
                                 <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','basictheme' ); ?>
+                                    <?php esc_html_e( 'ADD TO MENU','carpenter' ); ?>
                                 </a>
                             </li>
                         </ul>
@@ -57,7 +57,7 @@ $basictheme_nav_top_sticky   =   $basictheme_options['basictheme_nav_top_sticky'
 
                     <div class="shop-cart-view d-flex align-items-center">
                         <?php
-                        do_action( 'basictheme_woo_shopping_cart' );
+                        do_action( 'carpenter_woo_shopping_cart' );
 
                         the_widget( 'WC_Widget_Cart', '' );
                         ?>

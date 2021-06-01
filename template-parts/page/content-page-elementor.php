@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post() ;
         <?php
         the_content();
 
-        basictheme_link_page();
+        carpenter_link_page();
         ?>
 
     </div>

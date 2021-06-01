@@ -2,7 +2,7 @@
 
 namespace Elementor;
 
-final class basictheme_plugin_elementor_widgets {
+final class carpenter_plugin_elementor_widgets {
 
     private static $_instance = null;
 
@@ -37,9 +37,9 @@ final class basictheme_plugin_elementor_widgets {
     public function init_category() {
 
         Plugin::instance()->elements_manager->add_category(
-            'basictheme_widgets',
+            'carpenter_widgets',
             [
-                'title' => esc_html__( 'Basic Theme Widgets', 'basictheme' ),
+                'title' => esc_html__( 'Basic Theme Widgets', 'carpenter' ),
                 'icon'  => 'icon-goes-here'
             ]
         );
@@ -65,9 +65,9 @@ final class basictheme_plugin_elementor_widgets {
     }
 
     public function init_script() {
-        wp_register_script( 'basictheme-elementor-custom', get_theme_file_uri( '/assets/js/elementor-custom.js' ), array(), '1.0.0', true );
+        wp_register_script( 'carpenter-elementor-custom', get_theme_file_uri( '/assets/js/elementor-custom.js' ), array(), '1.0.0', true );
     }
 
 }
 
-basictheme_plugin_elementor_widgets::instance();
+carpenter_plugin_elementor_widgets::instance();

@@ -8,29 +8,29 @@ if ( ! class_exists( 'Redux' ) ) {
 
 
 // This is your option name where all the Redux data is stored.
-$basictheme_opt_name = "basictheme_options";
+$carpenter_opt_name = "carpenter_options";
 
 /**
  * ---> SET ARGUMENTS
  * All the possible arguments for Redux.
  * */
 
-$basictheme_theme = wp_get_theme(); // For use with some settings. Not necessary.
+$carpenter_theme = wp_get_theme(); // For use with some settings. Not necessary.
 
-$basictheme_opt_args = array(
+$carpenter_opt_args = array(
 
-    'opt_name'             => $basictheme_opt_name,
+    'opt_name'             => $carpenter_opt_name,
     // This is where your data is stored in the database and also becomes your global variable name.
-    'display_name'         => $basictheme_theme->get( 'Name' ),
+    'display_name'         => $carpenter_theme->get( 'Name' ),
     // Name that appears at the top of your panel
-    'display_version'      => $basictheme_theme->get( 'Version' ),
+    'display_version'      => $carpenter_theme->get( 'Version' ),
     // Version that appears at the top of your panel
     'menu_type'            => 'menu',
     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
     'allow_sub_menu'       => false,
     // Show the sections below the admin menu item or not
-    'menu_title'           => $basictheme_theme->get( 'Name' ) . esc_html__(' Options', 'basictheme'),
-    'page_title'           => $basictheme_theme->get( 'Name' ) . esc_html__(' Options', 'basictheme'),
+    'menu_title'           => $carpenter_theme->get( 'Name' ) . esc_html__(' Options', 'carpenter'),
+    'page_title'           => $carpenter_theme->get( 'Name' ) . esc_html__(' Options', 'carpenter'),
     // You will need to generate a Google API key to use this feature.
     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
     'google_api_key'       => '',
@@ -122,7 +122,7 @@ $basictheme_opt_args = array(
         ),
     )
 );
-Redux::set_args( $basictheme_opt_name, $basictheme_opt_args );
+Redux::set_args( $carpenter_opt_name, $carpenter_opt_args );
 /*
  * ---> END ARGUMENTS
  */
@@ -131,23 +131,23 @@ Redux::set_args( $basictheme_opt_name, $basictheme_opt_args );
  * ---> START HELP TABS
  */
 
-$basictheme_opt_tabs = array(
+$carpenter_opt_tabs = array(
     array(
         'id'        =>  'redux-help-tab-1',
-        'title'     =>  esc_html__( 'Theme Information 1', 'basictheme' ),
-        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'basictheme' )
+        'title'     =>  esc_html__( 'Theme Information 1', 'carpenter' ),
+        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'carpenter' )
     ),
     array(
         'id'        =>  'redux-help-tab-2',
-        'title'     =>  esc_html__( 'Theme Information 2', 'basictheme' ),
-        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'basictheme' )
+        'title'     =>  esc_html__( 'Theme Information 2', 'carpenter' ),
+        'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'carpenter' )
     )
 );
-Redux::set_help_tab( $basictheme_opt_name, $basictheme_opt_tabs );
+Redux::set_help_tab( $carpenter_opt_name, $carpenter_opt_tabs );
 
 // Set the help sidebar
-$basictheme_opt_content = esc_html__( '<p>This is the sidebar content, HTML is allowed.</p>', 'basictheme' );
-Redux::set_help_sidebar( $basictheme_opt_name, $basictheme_opt_content );
+$carpenter_opt_content = esc_html__( '<p>This is the sidebar content, HTML is allowed.</p>', 'carpenter' );
+Redux::set_help_sidebar( $carpenter_opt_name, $carpenter_opt_content );
 
 
 /*
@@ -162,9 +162,9 @@ Redux::set_help_sidebar( $basictheme_opt_name, $basictheme_opt_content );
 
 // -> START option background
 
-Redux::set_section( $basictheme_opt_name, array(
-    'id'                =>   'basictheme_theme_option',
-    'title'             =>   $basictheme_theme->get( 'Name' ).' '.$basictheme_theme->get( 'Version' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'id'                =>   'carpenter_theme_option',
+    'title'             =>   $carpenter_theme->get( 'Name' ).' '.$carpenter_theme->get( 'Version' ),
     'customizer_width'  =>   '400px',
     'icon'              =>   '',
 ));
@@ -173,73 +173,73 @@ Redux::set_section( $basictheme_opt_name, array(
 
 /* Start General Options */
 
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'General Options', 'basictheme' ),
-    'id'                =>  'basictheme_general',
-    'desc'              =>  esc_html__( 'General all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'General Options', 'carpenter' ),
+    'id'                =>  'carpenter_general',
+    'desc'              =>  esc_html__( 'General all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-th-large',
 ));
 
 // Favicon Config
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Favicon', 'basictheme' ),
-    'id'            =>  'basictheme_favicon_config',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Favicon', 'carpenter' ),
+    'id'            =>  'carpenter_favicon_config',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'basictheme_favicon_upload',
+            'id'        =>  'carpenter_favicon_upload',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload Favicon Image', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Favicon image for your website', 'basictheme' ),
-            'desc'      =>  esc_html__( '', 'basictheme' ),
+            'title'     =>  esc_html__( 'Upload Favicon Image', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Favicon image for your website', 'carpenter' ),
+            'desc'      =>  esc_html__( '', 'carpenter' ),
             'default'   =>  false,
         ),
     )
 ));
 
 //Loading config
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Loading config', 'basictheme' ),
-    'id'            =>  'basictheme_general_loading',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Loading config', 'carpenter' ),
+    'id'            =>  'carpenter_general_loading',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'basictheme_general_show_loading',
+            'id'        =>  'carpenter_general_show_loading',
             'type'      =>  'switch',
-            'title'     =>  esc_html__( 'Loading On/Off', 'basictheme' ),
+            'title'     =>  esc_html__( 'Loading On/Off', 'carpenter' ),
             'default'   =>  false,
         ),
         array(
-            'id'        =>  'basictheme_general_image_loading',
+            'id'        =>  'carpenter_general_image_loading',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload image loading', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Upload image .gif', 'basictheme' ),
+            'title'     =>  esc_html__( 'Upload image loading', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Upload image .gif', 'carpenter' ),
             'default'   =>  '',
-            'required'  =>  array( 'basictheme_general_show_loading', '=', true ),
+            'required'  =>  array( 'carpenter_general_show_loading', '=', true ),
         ),
     )
 ));
 
 //Background Options
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Background', 'basictheme' ),
-    'id'                =>  'basictheme_background',
-    'desc'              =>  esc_html__( 'Background all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Background', 'carpenter' ),
+    'id'                =>  'carpenter_background',
+    'desc'              =>  esc_html__( 'Background all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'subsection'        => true,
     'fields'            => array(
         array(
-            'id'        =>  'basictheme_background_body',
+            'id'        =>  'carpenter_background_body',
             'output'    =>  'body',
             'type'      =>  'background',
             'clone'     =>  'true',
-            'title'     =>  esc_html__( 'Body background', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Body background with image, color, etc.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Body background', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Body background with image, color, etc.', 'carpenter' ),
             'hint'      =>  array(
                 'content'   =>  'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
             )
@@ -250,38 +250,38 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End General Options */
 
 /* Start Header Options */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Header Options', 'basictheme' ),
-    'id'                =>  'basictheme_header',
-    'desc'              =>  esc_html__( 'Header all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Header Options', 'carpenter' ),
+    'id'                =>  'carpenter_header',
+    'desc'              =>  esc_html__( 'Header all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-arrow-up',
 ));
 
 //Logo Config
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Logo', 'basictheme' ),
-    'id'            =>  'basictheme_logo_config',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Logo', 'carpenter' ),
+    'id'            =>  'carpenter_logo_config',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'basictheme_logo_image',
+            'id'        =>  'carpenter_logo_image',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload logo', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'logo image for your website', 'basictheme' ),
-            'desc'      =>  esc_html__( '', 'basictheme' ),
+            'title'     =>  esc_html__( 'Upload logo', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'logo image for your website', 'carpenter' ),
+            'desc'      =>  esc_html__( '', 'carpenter' ),
             'default'   =>  false,
         ),
 
         array(
-            'id'                => 'basictheme_logo_images_size',
+            'id'                => 'carpenter_logo_images_size',
             'type'              => 'dimensions',
             'units'             => array( 'em', 'px', '%' ),
-            'title'             => esc_html__( 'Set width/height for logo', 'basictheme' ),
-            'subtitle'          => esc_html__( '', 'basictheme' ),
+            'title'             => esc_html__( 'Set width/height for logo', 'carpenter' ),
+            'subtitle'          => esc_html__( '', 'carpenter' ),
             'units_extended'    => 'true',
             'default'           => array(
                 'width'     =>  '',
@@ -291,13 +291,13 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
         array(
-            'id'        =>  'basictheme_nav_top_sticky',
+            'id'        =>  'carpenter_nav_top_sticky',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Sticky Menu', 'basictheme' ),
+            'title'     =>  esc_html__( 'Sticky Menu', 'carpenter' ),
             'default'   =>  1,
             'options'   =>  array(
-                1   =>  esc_html__( 'Yes', 'basictheme' ),
-                2   =>  esc_html__( 'No', 'basictheme' )
+                1   =>  esc_html__( 'Yes', 'carpenter' ),
+                2   =>  esc_html__( 'No', 'carpenter' )
             )
         ),
 
@@ -305,42 +305,42 @@ Redux::set_section( $basictheme_opt_name, array(
 ));
 
 // information
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Information', 'basictheme' ),
-    'id'            =>  'basictheme_information_config',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Information', 'carpenter' ),
+    'id'            =>  'carpenter_information_config',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'basictheme_information_show_hide',
+            'id'        =>  'carpenter_information_show_hide',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Show Or Hide Information', 'basictheme' ),
+            'title'     =>  esc_html__( 'Show Or Hide Information', 'carpenter' ),
             'default'   =>  1,
             'options'   =>  array(
-                1   =>  esc_html__( 'Show', 'basictheme' ),
-                0   =>  esc_html__( 'Hide', 'basictheme' )
+                1   =>  esc_html__( 'Show', 'carpenter' ),
+                0   =>  esc_html__( 'Hide', 'carpenter' )
             )
         ),
 
         array(
-            'id'        =>  'basictheme_information_address',
+            'id'        =>  'carpenter_information_address',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Address', 'basictheme' ),
+            'title'     =>  esc_html__( 'Address', 'carpenter' ),
             'default'   =>  '988782, Our Street, S State.',
         ),
 
         array(
-            'id'        =>  'basictheme_information_mail',
+            'id'        =>  'carpenter_information_mail',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Mail', 'basictheme' ),
+            'title'     =>  esc_html__( 'Mail', 'carpenter' ),
             'default'   =>  'info@domain.com',
         ),
 
         array(
-            'id'        =>  'basictheme_information_phone',
+            'id'        =>  'carpenter_information_phone',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Phone', 'basictheme' ),
+            'title'     =>  esc_html__( 'Phone', 'carpenter' ),
             'default'   =>  '+1 234 567 186',
         ),
 
@@ -350,18 +350,18 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End Header Options */
 
 /* Start Blog Option */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Blog Options', 'basictheme' ),
-    'id'                =>  'basictheme_blog_option',
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Blog Options', 'carpenter' ),
+    'id'                =>  'carpenter_blog_option',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-blogger',
     'fields'            =>  array(
 
         array(
-            'id'        =>  'basictheme_blog_sidebar_archive',
+            'id'        =>  'carpenter_blog_sidebar_archive',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Sidebar Archive', 'basictheme' ),
-            'desc'      =>  esc_html__( 'Use for archive, index, page search', 'basictheme' ),
+            'title'     =>  esc_html__( 'Sidebar Archive', 'carpenter' ),
+            'desc'      =>  esc_html__( 'Use for archive, index, page search', 'carpenter' ),
             'default'   =>  'right',
             'options'   =>  array(
                 'hide' =>  array(
@@ -383,9 +383,9 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
 	    array(
-		    'id'        =>  'basictheme_blog_per_row',
+		    'id'        =>  'carpenter_blog_per_row',
 		    'type'      =>  'select',
-		    'title'     =>  esc_html__( 'Blog Per Row', 'basictheme' ),
+		    'title'     =>  esc_html__( 'Blog Per Row', 'carpenter' ),
 		    'default'   =>  2,
 		    'options'   =>  array(
 			    2   =>  '2 Column',
@@ -397,17 +397,17 @@ Redux::set_section( $basictheme_opt_name, array(
     )
 ));
 
-Redux::set_section( $basictheme_opt_name, array(
-	'title'         =>  esc_html__( 'Single Post', 'basictheme' ),
-	'id'            =>  'basictheme_single_post_option',
-	'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+	'title'         =>  esc_html__( 'Single Post', 'carpenter' ),
+	'id'            =>  'carpenter_single_post_option',
+	'desc'          =>  esc_html__( '', 'carpenter' ),
 	'subsection'    =>  true,
 	'fields'        =>  array(
 
 		array(
-			'id'        =>  'basictheme_blog_sidebar_single',
+			'id'        =>  'carpenter_blog_sidebar_single',
 			'type'      =>  'image_select',
-			'title'     =>  esc_html__( 'Sidebar Single', 'basictheme' ),
+			'title'     =>  esc_html__( 'Sidebar Single', 'carpenter' ),
 			'default'   =>  'right',
 			'options'   =>  array(
 				'hide' =>  array(
@@ -429,16 +429,16 @@ Redux::set_section( $basictheme_opt_name, array(
 		),
 
 		array(
-			'id'        =>  'basictheme_on_off_share_single',
+			'id'        =>  'carpenter_on_off_share_single',
 			'type'      =>  'switch',
-			'title'     =>  esc_html__( 'On/Off Share Post Single', 'basictheme' ),
+			'title'     =>  esc_html__( 'On/Off Share Post Single', 'carpenter' ),
 			'default'   =>  true,
 		),
 
 		array(
-			'id'            =>  'basictheme_related_post_limit',
+			'id'            =>  'carpenter_related_post_limit',
 			'type'          =>  'slider',
-			'title'         =>  esc_html__( 'Related Post Limit', 'basictheme' ),
+			'title'         =>  esc_html__( 'Related Post Limit', 'carpenter' ),
 			'min'           =>  1,
 			'step'          =>  1,
 			'max'           =>  250,
@@ -451,38 +451,38 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End Blog Option */
 
 /* Start Social Network */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Social Network', 'basictheme' ),
-    'id'                =>  'basictheme_social_network',
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Social Network', 'carpenter' ),
+    'id'                =>  'carpenter_social_network',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-globe-alt',
     'fields'            =>  array(
 
         array(
-            'id'        =>  'basictheme_social_network_facebook',
+            'id'        =>  'carpenter_social_network_facebook',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Facebook', 'basictheme' ),
+            'title'     =>  esc_html__( 'Facebook', 'carpenter' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'basictheme_social_network_youtube',
+            'id'        =>  'carpenter_social_network_youtube',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Youtube', 'basictheme' ),
+            'title'     =>  esc_html__( 'Youtube', 'carpenter' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'basictheme_social_network_twitter',
+            'id'        =>  'carpenter_social_network_twitter',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Twitter', 'basictheme' ),
+            'title'     =>  esc_html__( 'Twitter', 'carpenter' ),
             'default'   =>  '#',
         ),
 
         array(
-            'id'        =>  'basictheme_social_network_instagram',
+            'id'        =>  'carpenter_social_network_instagram',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Instagram', 'basictheme' ),
+            'title'     =>  esc_html__( 'Instagram', 'carpenter' ),
             'default'   =>  '#',
         ),
 
@@ -491,18 +491,18 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End Social Network */
 
 /* Start Shop */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Shop', 'basictheme' ),
-    'id'                =>  'basictheme_shop_woo',
-    'desc'              =>  esc_html__( 'Settings WooCommerce', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Shop', 'carpenter' ),
+    'id'                =>  'carpenter_shop_woo',
+    'desc'              =>  esc_html__( 'Settings WooCommerce', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-shopping-cart',
     'fields'            =>  array(
 
         array(
-            'id'            =>  'basictheme_product_limit',
+            'id'            =>  'carpenter_product_limit',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Product Limit Page Shop', 'basictheme' ),
+            'title'         =>  esc_html__( 'Product Limit Page Shop', 'carpenter' ),
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  250,
@@ -511,9 +511,9 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
         array(
-            'id'        =>  'basictheme_products_per_row',
+            'id'        =>  'carpenter_products_per_row',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Products Per Row', 'basictheme' ),
+            'title'     =>  esc_html__( 'Products Per Row', 'carpenter' ),
             'default'   =>  4,
             'options'   =>  array(
                 3   =>  '3 Column',
@@ -523,10 +523,10 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
         array(
-            'id'        =>  'basictheme_sidebar_woo',
+            'id'        =>  'carpenter_sidebar_woo',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'basictheme' ),
-            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'basictheme' ),
+            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'carpenter' ),
+            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'carpenter' ),
             'default'   =>  'left',
             'options'   =>  array(
                 'left'  =>  'Left',
@@ -539,28 +539,28 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End Shop */
 
 /* Start Typography Options */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Typography', 'basictheme' ),
-    'id'                =>  'basictheme_typography',
-    'desc'              =>  esc_html__( 'Typography all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Typography', 'carpenter' ),
+    'id'                =>  'carpenter_typography',
+    'desc'              =>  esc_html__( 'Typography all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-fontsize'
 ));
 
 // Body font
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Body Typography', 'basictheme' ),
-    'id'            =>  'basictheme_body_typography',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Body Typography', 'carpenter' ),
+    'id'            =>  'carpenter_body_typography',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'basictheme_body_typography_font',
+            'id'        =>  'carpenter_body_typography_font',
             'type'      =>  'typography',
             'output'    =>  array( 'body' ),
-            'title'     =>  esc_html__( 'Body Font', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Specify the body font properties.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Body Font', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Specify the body font properties.', 'carpenter' ),
             'google'    =>  true,
             'default'   =>  array(
                 'color'         =>  '',
@@ -571,29 +571,29 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
         array(
-            'id'        =>  'basictheme_link_color',
+            'id'        =>  'carpenter_link_color',
             'type'      =>  'link_color',
             'output'    =>  array( 'a' ),
-            'title'     =>  esc_html__( 'Link Color', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Controls the color of all text links.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Link Color', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Controls the color of all text links.', 'carpenter' ),
             'default'   =>  ''
         ),
     )
 ));
 
 // Header font
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Custom Typography', 'basictheme' ),
-    'id'            =>  'basictheme_custom_typography',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Custom Typography', 'carpenter' ),
+    'id'            =>  'carpenter_custom_typography',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
 
         array(
-            'id'        =>  'basictheme_custom_typography_1',
+            'id'        =>  'carpenter_custom_typography_1',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 1 Typography', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 1.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Custom 1 Typography', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 1.', 'carpenter' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -605,18 +605,18 @@ Redux::set_section( $basictheme_opt_name, array(
 
         //selector custom typo 1
         array(
-            'id'        =>  'basictheme_custom_typography_1_selector',
+            'id'        =>  'carpenter_custom_typography_1_selector',
             'type'      =>  'textarea',
-            'title'     =>  esc_html__( 'Selectors 1', 'basictheme' ),
-            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'basictheme' ),
+            'title'     =>  esc_html__( 'Selectors 1', 'carpenter' ),
+            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'carpenter' ),
             'default'   =>  ''
         ),
 
         array(
-            'id'        =>  'basictheme_custom_typography_2',
+            'id'        =>  'carpenter_custom_typography_2',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 2 Typography', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 2.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Custom 2 Typography', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 2.', 'carpenter' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -628,18 +628,18 @@ Redux::set_section( $basictheme_opt_name, array(
 
         //selector custom typo 2
         array(
-            'id'        => 'basictheme_custom_typography_2_selector',
+            'id'        => 'carpenter_custom_typography_2_selector',
             'type'      => 'textarea',
-            'title'     => esc_html__( 'Selectors 2', 'basictheme' ),
-            'desc'      => esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'basictheme' ),
+            'title'     => esc_html__( 'Selectors 2', 'carpenter' ),
+            'desc'      => esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'carpenter' ),
             'default'   => ''
         ),
 
         array(
-            'id'        =>  'basictheme_custom_typography_3',
+            'id'        =>  'carpenter_custom_typography_3',
             'type'      =>  'typography',
-            'title'     =>  esc_html__( 'Custom 3 Typography', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 3.', 'basictheme' ),
+            'title'     =>  esc_html__( 'Custom 3 Typography', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'These settings control the typography for all Custom 3.', 'carpenter' ),
             'google'    =>  true,
             'default'   =>  array(
                 'font-size'     =>  '',
@@ -652,10 +652,10 @@ Redux::set_section( $basictheme_opt_name, array(
 
         //selector custom typo 3
         array(
-            'id'        =>  'basictheme_custom_typography_3_selector',
+            'id'        =>  'carpenter_custom_typography_3_selector',
             'type'      =>  'textarea',
-            'title'     =>  esc_html__( 'Selectors 3', 'basictheme' ),
-            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'basictheme' ),
+            'title'     =>  esc_html__( 'Selectors 3', 'carpenter' ),
+            'desc'      =>  esc_html__( 'Import selectors. You can import one or multi selector.Example: #selector1,#selector2,.selector3', 'carpenter' ),
             'default'   =>  ''
         ),
 
@@ -665,34 +665,34 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End Typography Options */
 
 /* Start 404 Options */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( '404 Options', 'basictheme' ),
-    'id'                =>  'basictheme_404',
-    'desc'              =>  esc_html__( '404 page all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( '404 Options', 'carpenter' ),
+    'id'                =>  'carpenter_404',
+    'desc'              =>  esc_html__( '404 page all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-warning-sign',
     'fields'            =>  array(
 
         array(
-            'id'        =>  'basictheme_404_background',
+            'id'        =>  'carpenter_404_background',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( '404 Background', 'basictheme' ),
+            'title'     =>  esc_html__( '404 Background', 'carpenter' ),
             'default'   =>  false,
         ),
 
         array(
-            'id'        =>  'basictheme_404_title',
+            'id'        =>  'carpenter_404_title',
             'type'      =>  'text',
-            'title'     =>  esc_html__( '404 Title', 'basictheme' ),
+            'title'     =>  esc_html__( '404 Title', 'carpenter' ),
             'default'   =>  'Awww...Do Not Cry',
         ),
 
         array(
-            'id'        =>  'basictheme_404_editor',
+            'id'        =>  'carpenter_404_editor',
             'type'      =>  'editor',
-            'title'     =>  esc_html__( '404 Content', 'basictheme' ),
-            'default'   =>  esc_html__( 'It is just a 404 Error! What you are looking for may have been misplaced in Long Term Memory.', 'basictheme' ),
+            'title'     =>  esc_html__( '404 Content', 'carpenter' ),
+            'default'   =>  esc_html__( 'It is just a 404 Error! What you are looking for may have been misplaced in Long Term Memory.', 'carpenter' ),
             'args'          =>  array(
                 'wpautop'       => false,
                 'media_buttons' => false,
@@ -707,25 +707,25 @@ Redux::set_section( $basictheme_opt_name, array(
 /* End 404 Options */
 
 /* Start Footer Options */
-Redux::set_section( $basictheme_opt_name, array(
-    'title'             =>  esc_html__( 'Footer Options', 'basictheme' ),
-    'id'                =>  'basictheme_footer',
-    'desc'              =>  esc_html__( 'Footer all config', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'             =>  esc_html__( 'Footer Options', 'carpenter' ),
+    'id'                =>  'carpenter_footer',
+    'desc'              =>  esc_html__( 'Footer all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-arrow-down'
 ));
 
 // Footer Sidebar Multi Column
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'basictheme' ),
-    'id'            =>  'basictheme_footer_sidebar_multi_column',
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'carpenter' ),
+    'id'            =>  'carpenter_footer_sidebar_multi_column',
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'        =>  'basictheme_footer_multi_column',
+            'id'        =>  'carpenter_footer_multi_column',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Number of Footer Columns', 'basictheme' ),
-            'subtitle'  =>  esc_html__( 'Controls the number of columns in the footer', 'basictheme' ),
+            'title'     =>  esc_html__( 'Number of Footer Columns', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Controls the number of columns in the footer', 'carpenter' ),
             'default'   =>  4,
             'options'   =>  array(
                 0 =>  array(
@@ -754,76 +754,76 @@ Redux::set_section( $basictheme_opt_name, array(
         ),
 
         array(
-            'id'            =>  'basictheme_footer_multi_column_1',
+            'id'            =>  'carpenter_footer_multi_column_1',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 1', 'basictheme' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'basictheme' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'basictheme' ),
+            'title'         =>  esc_html__( 'Column width 1', 'carpenter' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'carpenter' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'carpenter' ),
             'default'       =>  3,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'basictheme_footer_multi_column', 'equals','1', '2', '3', '4' ),
-                array( 'basictheme_footer_multi_column', '!=', '0' ),
+                array( 'carpenter_footer_multi_column', 'equals','1', '2', '3', '4' ),
+                array( 'carpenter_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'basictheme_footer_multi_column_2',
+            'id'            =>  'carpenter_footer_multi_column_2',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 2', 'basictheme' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'basictheme' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'basictheme' ),
+            'title'         =>  esc_html__( 'Column width 2', 'carpenter' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'carpenter' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'carpenter' ),
             'default'       =>  3,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'basictheme_footer_multi_column', 'equals', '2', '3', '4' ),
-                array( 'basictheme_footer_multi_column', '!=', '1' ),
-                array( 'basictheme_footer_multi_column', '!=', '0' ),
+                array( 'carpenter_footer_multi_column', 'equals', '2', '3', '4' ),
+                array( 'carpenter_footer_multi_column', '!=', '1' ),
+                array( 'carpenter_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'basictheme_footer_multi_column_3',
+            'id'            =>  'carpenter_footer_multi_column_3',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 3', 'basictheme' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'basictheme' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'basictheme' ),
+            'title'         =>  esc_html__( 'Column width 3', 'carpenter' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'carpenter' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'carpenter' ),
             'default'       =>  3,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'basictheme_footer_multi_column', 'equals', '3', '4' ),
-                array( 'basictheme_footer_multi_column', '!=', '1' ),
-                array( 'basictheme_footer_multi_column', '!=', '2' ),
-                array( 'basictheme_footer_multi_column', '!=', '0' ),
+                array( 'carpenter_footer_multi_column', 'equals', '3', '4' ),
+                array( 'carpenter_footer_multi_column', '!=', '1' ),
+                array( 'carpenter_footer_multi_column', '!=', '2' ),
+                array( 'carpenter_footer_multi_column', '!=', '0' ),
             )
         ),
 
         array(
-            'id'            =>  'basictheme_footer_multi_column_4',
+            'id'            =>  'carpenter_footer_multi_column_4',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Column width 4', 'basictheme' ),
-            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'basictheme' ),
-            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'basictheme' ),
+            'title'         =>  esc_html__( 'Column width 4', 'carpenter' ),
+            'subtitle'      =>  esc_html__( 'Select the number of columns to display in the footer', 'carpenter' ),
+            'desc'          =>  esc_html__( 'Min: 1, max: 12, default value: 1', 'carpenter' ),
             'default'       =>  3,
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  12,
             'display_value' =>  'label',
             'required'      =>  array(
-                array( 'basictheme_footer_multi_column',  'equals', '4' ),
-                array( 'basictheme_footer_multi_column', '!=', '1' ),
-                array( 'basictheme_footer_multi_column', '!=', '2' ),
-                array( 'basictheme_footer_multi_column', '!=', '3' ),
-                array( 'basictheme_footer_multi_column', '!=', '0' ),
+                array( 'carpenter_footer_multi_column',  'equals', '4' ),
+                array( 'carpenter_footer_multi_column', '!=', '1' ),
+                array( 'carpenter_footer_multi_column', '!=', '2' ),
+                array( 'carpenter_footer_multi_column', '!=', '3' ),
+                array( 'carpenter_footer_multi_column', '!=', '0' ),
             )
         ),
     )
@@ -831,16 +831,16 @@ Redux::set_section( $basictheme_opt_name, array(
 ));
 
 //Copyright
-Redux::set_section( $basictheme_opt_name, array(
-    'title'         =>  esc_html__( 'Copyright', 'basictheme' ),
-    'id'            =>  'basictheme_footer_copyright',
-    'desc'          =>  esc_html__( '', 'basictheme' ),
+Redux::set_section( $carpenter_opt_name, array(
+    'title'         =>  esc_html__( 'Copyright', 'carpenter' ),
+    'id'            =>  'carpenter_footer_copyright',
+    'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
     'fields'        =>  array(
         array(
-            'id'            =>  'basictheme_footer_copyright_editor',
+            'id'            =>  'carpenter_footer_copyright_editor',
             'type'          =>  'editor',
-            'title'         =>  esc_html__( 'Enter content copyright', 'basictheme' ),
+            'title'         =>  esc_html__( 'Enter content copyright', 'carpenter' ),
             'full_width'    =>  true,
             'default'       =>  'Copyright &amp; DiepLK',
             'args'          =>  array(

@@ -1,8 +1,8 @@
 <?php
 //Global variable redux
-global $basictheme_options;
+global $carpenter_options;
 
-$basictheme_copyright = $basictheme_options ['basictheme_footer_copyright_editor'] == '' ? 'Copyright &amp; DiepLK' : $basictheme_options ['basictheme_footer_copyright_editor'];
+$carpenter_copyright = $carpenter_options ['carpenter_footer_copyright_editor'] == '' ? 'Copyright &amp; DiepLK' : $carpenter_options ['carpenter_footer_copyright_editor'];
 
 ?>
 
@@ -10,7 +10,7 @@ $basictheme_copyright = $basictheme_options ['basictheme_footer_copyright_editor
     <div class="container">
         <div class="site-copyright-menu d-flex align-items-center">
             <div class="site-copyright">
-                <?php echo wp_kses_post( $basictheme_copyright ); ?>
+                <?php echo wp_kses_post( $carpenter_copyright ); ?>
             </div>
 
             <div class="site-footer__menu">
@@ -32,7 +32,7 @@ $basictheme_copyright = $basictheme_options ['basictheme_footer_copyright_editor
                         <ul class="main-menu">
                             <li>
                                 <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','basictheme' ); ?>
+                                    <?php esc_html_e( 'ADD TO MENU','carpenter' ); ?>
                                 </a>
                             </li>
                         </ul>
