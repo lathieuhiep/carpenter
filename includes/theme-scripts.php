@@ -1,40 +1,5 @@
 <?php
 
-/* GET fonts google */
-if ( ! function_exists( 'carpenter_fonts_url' ) ) :
-
-	function carpenter_fonts_url() {
-		$carpenter_fonts_url = '';
-
-		/* Translators: If there are characters in your language that are not
-		* supported by Open Sans, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$carpenter_font_google = _x( 'on', 'Google font: on or off', 'carpenter' );
-
-		if ( 'off' !== $carpenter_font_google ) {
-			$carpenter_font_families = array();
-
-			if ( 'off' !== $carpenter_font_google ) {
-				$carpenter_font_families = [
-                    'Arimo:400',
-                    'Pattaya:400'
-                ];
-			}
-
-			$carpenter_query_args = array(
-				'family' => urlencode( implode( '|', $carpenter_font_families ) ),
-				'subset' => urlencode( 'latin, vietnamese' ),
-			);
-
-			$carpenter_fonts_url = add_query_arg( $carpenter_query_args, 'https://fonts.googleapis.com/css2' );
-		}
-
-		return esc_url_raw( $carpenter_fonts_url );
-	}
-
-endif;
-
 // Remove jquery migrate
 add_action( 'wp_default_scripts', 'carpenter_remove_jquery_migrate' );
 function carpenter_remove_jquery_migrate( $scripts ) {

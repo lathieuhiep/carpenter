@@ -52,12 +52,6 @@ if ( ! function_exists( 'carpenter_setup' ) ):
 
 		/*  Post Type   */
 		add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio' ) );
-
-		/*
-		* This theme styles the visual editor to resemble the theme style,
-		* specifically font, colors, icons, and column width.
-		*/
-		add_editor_style( array( 'css/editor-style.css', carpenter_fonts_url() ) );
 	}
 
 	add_action( 'after_setup_theme', 'carpenter_setup' );
