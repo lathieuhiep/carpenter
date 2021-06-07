@@ -84,12 +84,36 @@
         display: inline-flex;
         height: 100%;
         @include align-items(center);
+
+        &.menu-item-has-children {
+          > a {
+            &:after {
+              content: "\f078";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              padding-left: 10px;
+            }
+          }
+        }
       }
     }
     ul {
       li {
         .sub-menu {
           display: block !important;
+
+          &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 10px solid #ffffff;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
         }
       }
     }

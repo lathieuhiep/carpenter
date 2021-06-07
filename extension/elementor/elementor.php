@@ -53,6 +53,7 @@ final class carpenter_plugin_elementor_widgets {
             'post-grid',
             'post-carousel',
             'about-text',
+            'construction-grid'
         ];
         
         foreach ( $build_widgets_filename as $widget_filename ) :

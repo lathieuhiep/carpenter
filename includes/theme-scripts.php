@@ -29,7 +29,7 @@ function carpenter_register_front_end() {
 	/*
 	* Start Get Css Front End
 	* */
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Pattaya&display=swap', array(), null );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Pattaya&display=swap', array(), null );
 
 	/* Start main Css */
 	wp_enqueue_style( 'carpenter-library', get_theme_file_uri( '/assets/css/library.min.css' ), array(), '' );

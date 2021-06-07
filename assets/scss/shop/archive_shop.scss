@@ -9,6 +9,12 @@
     i {
       font-size: 18px;
       padding-right: 15px;
+      color: $color-nav;
+      @include transition();
+
+      &:hover {
+        color: $color-hover;
+      }
     }
     .number-cart-product {
       display: inline-block;

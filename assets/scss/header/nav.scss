@@ -1,6 +1,5 @@
 .main-navigation {
-  background-color: #ffffff;
-  @include box-shadow(0 3px 3px -3px rgba(0, 0, 0, 0.3));
+  background-color: $background-nav;
 
   .site-navbar {
     position: relative;
@@ -17,7 +16,6 @@
 
   a {
     display: inline-block;
-    line-height: 64px;
     padding: 15px 0;
   }
 }
@@ -30,11 +28,13 @@
 
     li {
       position: relative;
+      padding: 0 15px;
 
       a {
-        padding: 0 15px;
+        position: relative;
         text-shadow: none;
         display: block;
+        color: $color-nav;
 
         &:hover {
           background-color: transparent;
@@ -47,23 +47,29 @@
         }
       }
       .sub-menu {
-        min-width: 160px;
-        border-top: 1px solid $color-hover;
-        background-color: $border-color;
+        min-width: 200px;
+        background-color: #ffffff;
         position: absolute;
         top: 120%;
         left: 0;
         z-index: -1;
         visibility: hidden;
         opacity: 0;
+        @include box-shadow( 1px 1px 15px rgba(0,0,0,0.15) );
         @include transition();
 
         li {
-          padding: 8px 0;
+          padding: 8px 20px;
           display: block;
+          border-bottom: 1px solid #ececec;
 
           a {
             white-space: nowrap;
+            color: $color-title;
+
+            &:hover {
+              color: $color-hover;
+            }
           }
           .sub-menu {
             left: 90%;
@@ -74,6 +80,9 @@
               left: 100%;
             }
           }
+          &:last-child {
+            border-bottom: 0;
+          }
         }
       }
       &:hover {
@@ -82,6 +91,42 @@
           z-index: 999;
           opacity: 1;
           visibility: visible;
+        }
+      }
+    }
+  }
+  > ul {
+    > li {
+      > a {
+        text-transform: uppercase;
+
+        &:before {
+          position: absolute;
+          top: -5px;
+          left: 0;
+          content: '';
+          width: 0;
+          height: 3px;
+          opacity: 0;
+          background-color: $color-hover;
+          @include transition();
+        }
+        &:hover {
+          &:before {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+      &.current-menu-item {
+        > a {
+          color: $color-hover;
+
+          &:before {
+            color: $color-hover;
+            opacity: 1;
+            width: 100%;
+          }
         }
       }
     }

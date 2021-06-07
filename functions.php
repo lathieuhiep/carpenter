@@ -104,6 +104,11 @@ foreach ( glob( get_parent_theme_file_path( '/extension/widgets/*.php' ) ) as $c
 	require $carpenter_file_widgets;
 }
 
+/**
+ * Required: include post type
+ */
+require get_parent_theme_file_path( '/extension/post-type/construction.php' );
+
 if ( class_exists( 'Woocommerce' ) ) :
 	/*
 	 * Required: Woocommerce
