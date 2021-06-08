@@ -240,12 +240,15 @@ class carpenter_widget_construction_grid extends Widget_Base
         $query = new \ WP_Query($args);
 
         if ($query->have_posts()) :
-
             ?>
 
             <div class="element-construction-grid">
                 <div class="row">
-                    <?php while ($query->have_posts()): $query->the_post(); ?>
+                    <?php
+                    while ($query->have_posts()):
+                        $query->the_post();
+                        $terms = get_the_terms( get_the_ID(), 'construction_cat' );
+                    ?>
 
                         <div class="col-12 col-sm-6 col-md-4 col-lg-<?php echo esc_attr(12 / $settings['column_number']); ?>">
                             <div class="item-post">
@@ -262,11 +265,24 @@ class carpenter_widget_construction_grid extends Widget_Base
                                     </a>
                                 </div>
 
-                                <h2 class="item-post__title">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-                                </h2>
+                                <div class="item-post__content text-center">
+                                    <?php
+                                    if ( !empty( $terms ) ) :
+                                        $term = array_shift( $terms );
+                                    ?>
+                                        <h4 class="item-post__cate">
+                                            <a href="<?php echo esc_url( get_term_link( $term->slug, 'construction_cat' ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>">
+                                                <?php echo esc_html( $term->name ); ?>
+                                            </a>
+                                        </h4>
+                                    <?php endif; ?>
+
+                                    <h4 class="item-post__title">
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h4>
+                                </div>
                             </div>
                         </div>
 
