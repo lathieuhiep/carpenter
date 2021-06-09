@@ -93,11 +93,6 @@ class carpenter_recent_post_widget extends WP_Widget {
                                     <?php the_title(); ?>
                                 </a>
                             </h4>
-
-                            <p class="item-meta">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <?php echo get_the_date(); ?>
-                            </p>
                         </div>
                     </div>
 

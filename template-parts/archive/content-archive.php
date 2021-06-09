@@ -21,23 +21,19 @@ $carpenter_blog_per_row            =   $carpenter_options['carpenter_blog_per_ro
 
                                 <div id="post-<?php the_ID(); ?>" class="site-post-item col-12 col-md-6 col-lg-<?php echo esc_attr( 12 / $carpenter_blog_per_row ); ?>">
                                     <div class="site-post-content">
+                                        <?php carpenter_post_formats(); ?>
+
                                         <h2 class="site-post-title">
                                             <a href="<?php the_permalink();?>" title="<?php the_title(); ?>">
-				                                <?php if ( is_sticky() && is_home() ) : ?>
+                                                <?php if ( is_sticky() && is_home() ) : ?>
                                                     <i class="fa fa-thumb-tack" aria-hidden="true"></i>
-				                                <?php
-				                                endif;
+                                                <?php
+                                                endif;
 
-				                                the_title();
-				                                ?>
+                                                the_title();
+                                                ?>
                                             </a>
                                         </h2>
-
-		                                <?php
-		                                carpenter_post_formats();
-
-		                                carpenter_post_meta();
-		                                ?>
 
                                         <div class="site-post-excerpt">
                                             <p>
@@ -49,10 +45,6 @@ $carpenter_blog_per_row            =   $carpenter_options['carpenter_blog_per_ro
 				                                endif;
 				                                ?>
                                             </p>
-
-                                            <a href="<?php the_permalink();?>" class="text-read-more">
-				                                <?php esc_html_e(  'Read more','carpenter' ); ?>
-                                            </a>
 
 			                                <?php carpenter_link_page(); ?>
                                         </div>

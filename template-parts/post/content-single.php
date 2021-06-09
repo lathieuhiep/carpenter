@@ -7,14 +7,10 @@ $carpenter_on_off_share_single = $carpenter_options['carpenter_on_off_share_sing
 ?>
 
 <div id="post-<?php the_ID() ?>" <?php post_class( 'site-post-single-item' ); ?>>
-    <?php carpenter_post_formats(); ?>
-
     <div class="site-post-content">
-        <h2 class="site-post-title">
+        <h1 class="site-post-title">
             <?php the_title(); ?>
-        </h2>
-
-        <?php carpenter_post_meta(); ?>
+        </h1>
 
         <div class="site-post-excerpt">
             <?php

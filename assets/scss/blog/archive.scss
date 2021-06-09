@@ -4,14 +4,18 @@
   @include flex-direction(column);
 
   .site-post-content {
-    padding: 25px 15px 15px;
-    border: 1px solid #eee;
     @include flex(1 auto);
   }
+
   .site-post-image {
     margin-bottom: 10px;
+
+    img {
+      width: 100%;
+    }
   }
 }
+
 .site-post-title {
   margin-bottom: 10px;
   font-size: 24px;
@@ -23,11 +27,13 @@
       margin-right: 5px;
       color: $color-hover;
     }
+
     &:hover {
       color: $color-hover;
     }
   }
 }
+
 .site-post-meta {
   font-size: 12px;
   margin-bottom: 5px;
@@ -42,11 +48,13 @@
       margin-left: 10px;
       margin-right: 0;
     }
+
     &:last-child {
       &:after {
         display: none;
       }
     }
+
     a {
       color: $color-hover;
 
@@ -56,6 +64,7 @@
     }
   }
 }
+
 .site-post-excerpt {
   ul {
     li {
@@ -66,9 +75,11 @@
       }
     }
   }
+
   table {
     margin-bottom: 30px;
     width: 100%;
+
     tr {
       border-bottom: 1px solid $border-color;
 
@@ -77,15 +88,18 @@
       }
     }
   }
+
   dd {
     margin: 0 0 20px;
   }
+
   &:after {
     display: table;
     clear: both;
     content: '';
   }
 }
+
 .page-links {
   font-weight: $font-weight-bold;
 
@@ -95,6 +109,57 @@
     span {
       display: inline-block;
       padding: 0 5px;
+    }
+  }
+}
+
+.site-blog {
+  .site-post-title {
+    position: relative;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: -10px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+}
+
+.site-cate-construction {
+  .item {
+    margin-bottom: 30px;
+
+    &__thumbnail {
+      margin-bottom: 15px;
+
+      a {
+        display: block;
+      }
+    }
+
+    &__content {
+      &--cate,
+      &--title {
+        font-size: 15px;
+        font-family: $font-family-body;
+      }
+
+      &--cate {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      &--title {
+        a {
+          color: $color-second;
+        }
+      }
     }
   }
 }
