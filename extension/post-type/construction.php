@@ -11,19 +11,19 @@ function carpenter_create_construction() {
 
     /* Start post type template */
     $labels = array(
-        'name'                  =>  _x( 'Construction', 'post type general name', 'carpenter' ),
-        'singular_name'         =>  _x( 'Construction', 'post type singular name', 'carpenter' ),
-        'menu_name'             =>  _x( 'Construction', 'admin menu', 'carpenter' ),
-        'name_admin_bar'        =>  _x( 'All Constructions', 'add new on admin bar', 'carpenter' ),
-        'add_new'               =>  _x( 'Add New', 'Construction', 'carpenter' ),
-        'add_new_item'          =>  esc_html__( 'Add New Construction', 'carpenter' ),
-        'edit_item'             =>  esc_html__( 'Edit Construction', 'carpenter' ),
-        'new_item'              =>  esc_html__( 'New Construction', 'carpenter' ),
-        'view_item'             =>  esc_html__( 'View Construction', 'carpenter' ),
-        'all_items'             =>  esc_html__( 'All Constructions', 'carpenter' ),
-        'search_items'          =>  esc_html__( 'Search Construction', 'carpenter' ),
-        'not_found'             =>  esc_html__( 'No template found', 'carpenter' ),
-        'not_found_in_trash'    =>  esc_html__( 'No template found in trash', 'carpenter' ),
+        'name'                  =>  _x( 'Công trình', 'post type general name', 'carpenter' ),
+        'singular_name'         =>  _x( 'Công trình', 'post type singular name', 'carpenter' ),
+        'menu_name'             =>  _x( 'Công trình', 'admin menu', 'carpenter' ),
+        'name_admin_bar'        =>  _x( 'Danh sách công trình', 'add new on admin bar', 'carpenter' ),
+        'add_new'               =>  _x( 'Add New', 'Công trình', 'carpenter' ),
+        'add_new_item'          =>  esc_html__( 'Thêm công trình', 'carpenter' ),
+        'edit_item'             =>  esc_html__( 'Sửa công trình', 'carpenter' ),
+        'new_item'              =>  esc_html__( 'Công trình mới', 'carpenter' ),
+        'view_item'             =>  esc_html__( 'Xem công trình', 'carpenter' ),
+        'all_items'             =>  esc_html__( 'Danh sách công trình', 'carpenter' ),
+        'search_items'          =>  esc_html__( 'Tìm kiếm công trình', 'carpenter' ),
+        'not_found'             =>  esc_html__( 'Không tìm thấy', 'carpenter' ),
+        'not_found_in_trash'    =>  esc_html__( 'Không tìm thấy trong thùng rác', 'carpenter' ),
         'parent_item_colon'     =>  ''
     );
 

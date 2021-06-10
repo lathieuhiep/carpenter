@@ -7,27 +7,20 @@ function carpenter_register_meta_boxes() {
     /* Start meta box post */
     $carpenter_meta_boxes[] = array(
         'id'         => 'post_format_option',
-        'title'      => esc_html__( 'Post Format', 'carpenter' ),
-        'post_types' => array( 'post' ),
+        'title'      => esc_html__( 'Thiết lập công trình', 'carpenter' ),
+        'post_types' => array( 'construction' ),
         'context'    => 'normal',
         'priority'   => 'high',
         'fields' => array(
 
             array(
-                'id'               => 'carpenter_gallery_post',
+                'id'               => 'carpenter_construction_gallery',
                 'name'             => 'Gallery',
                 'type'             => 'image_advanced',
                 'force_delete'     => false,
                 'max_status'       => false,
                 'image_size'       => 'thumbnail',
             ),
-
-            array(
-                'id'            => 'carpenter_video_post',
-                'name'          => 'Video Or Audio',
-                'type'          => 'oembed',
-            ),
-
 
         )
     );
