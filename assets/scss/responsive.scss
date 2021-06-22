@@ -1,4 +1,4 @@
-@media ( min-width: 1200px ) {
+@media (min-width: 1200px) {
 
   .container {
     max-width: 1200px;
@@ -6,7 +6,7 @@
 
 }
 
-@media ( max-width: 1199px ) {
+@media (max-width: 1199px) {
 
   .container {
     max-width: none;
@@ -21,7 +21,7 @@
 
 }
 
-@media ( min-width: 992px ) and ( max-width: 1400px ) {
+@media (min-width: 992px) and (max-width: 1400px) {
 
   .site-menu ul li:nth-last-child(1),
   .site-menu ul li:nth-last-child(2) {
@@ -34,6 +34,7 @@
           left: auto;
           right: 90%;
         }
+
         &:hover {
           > .sub-menu {
             left: auto;
@@ -46,11 +47,13 @@
 
 }
 
-@media ( min-width: 992px ) and ( max-width: 1200px ) {
+@media (min-width: 992px) and (max-width: 1200px) {
 
   .site-menu {
     ul {
       li {
+        padding: 0 3px;
+
         a {
           padding: 0 7px;
         }
@@ -58,9 +61,15 @@
     }
   }
 
+  .site-logo {
+    img {
+      width: 130px !important;
+    }
+  }
+
 }
 
-@media ( min-width: 992px ) {
+@media (min-width: 992px) {
 
   .main-navigation {
     &.active-sticky-nav {
@@ -97,6 +106,7 @@
         }
       }
     }
+
     ul {
       li {
         .sub-menu {
@@ -128,8 +138,12 @@
 
 }
 
-@media ( max-width: 991px ) {
-  
+@media (max-width: 991px) {
+
+  .site-logo {
+    padding: 0 15px;
+  }
+
   .main-navigation {
     .navbar-expand-lg {
       .container {
@@ -138,27 +152,26 @@
       }
     }
   }
+
   .site-navigation_warp {
-    display: block;
-  }
-  .site-logo {
-    @include flexbox();
     @include justify-content(space-between);
-    @include flex(1);
   }
+
   .navbar-toggle {
     float: none;
     margin: 0;
     padding: 0;
     display: block;
   }
+
   .site-menu {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     z-index: 99;
+    @include box-shadow(1px 1px 15px rgba(0, 0, 0, 0.15));
 
     .collapse {
       display: none !important;
@@ -167,6 +180,7 @@
         display: block !important;
       }
     }
+
     ul {
       li {
         display: block;
@@ -176,10 +190,13 @@
         &:last-child {
           border-bottom: 0;
         }
+
         a {
           display: inline-block;
           padding: 15px 0;
+          color: $color-title;
         }
+
         .sub-menu {
           display: none;
           position: static;
@@ -188,6 +205,7 @@
           border-top: 0;
           background-color: transparent;
           @include transition-duration(0s);
+          @include box-shadow(none);
 
           li {
             border-bottom: 0;
@@ -206,22 +224,34 @@
                 margin-right: 10px;
               }
             }
+
             .icon_menu_item_mobile {
               top: 5px;
               right: 0;
+            }
+
+            &:first-child {
+              a {
+                padding-top: 0;
+              }
             }
           }
         }
       }
     }
   }
+
   .icon_menu_item_mobile {
     display: block;
   }
 
+  .shop-cart-view {
+    padding-left: 0;
+  }
+
 }
 
-@media ( min-width: 768px ) and ( max-width: 991px ) {
+@media (min-width: 768px) and (max-width: 991px) {
 
   .recent_posts_thumbs_widget_list .recent_posts_thumbs_widget_item,
   .recent_posts_thumbs_widget_fist_large .recent_posts_thumbs_widget_item:nth-child(n+2) {
@@ -255,11 +285,29 @@
 
 }
 
-@media ( max-width: 767px ) {
+@media (max-width: 767px) {
 
   .site-sidebar {
     padding-top: 50px;
   }
+
+  .related-post-item {
+    .post-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .rsp-width-img-element {
+    .elementor-image-box-img {
+      img {
+        max-width: none !important;
+        width: 100% !important;
+      }
+    }
+  }
+
   /* woocommerce */
   .woocommerce,
   .woocommerce-page {
@@ -274,7 +322,7 @@
 
 }
 
-@media ( min-width: 576px ) and ( max-width: 767px ) {
+@media (min-width: 576px) and (max-width: 767px) {
 
   .woocommerce {
     ul {
@@ -295,12 +343,13 @@
 
 }
 
-@media ( max-width: 575px ) {
+@media (max-width: 575px) {
 
   .comment-form {
     .comment-fields-row {
       margin-bottom: 0;
     }
+
     .form-comment-item {
       margin-bottom: 15px;
     }
@@ -324,7 +373,19 @@
 
 }
 
-@media ( max-width: 480px ) {
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .rsp-col-element {
+    .elementor-container {
+      .elementor-column {
+        width: 33.333333333% !important;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 480px) {
 
   .comments-area {
     .comment-list {
@@ -338,6 +399,7 @@
         }
       }
     }
+
     ul {
       li {
         ul {
@@ -348,6 +410,24 @@
       }
     }
   }
+
+  .site-copyright-menu {
+    @include flex-direction(column);
+  }
+
+  .site-footer__menu {
+    text-align: left;
+    margin-top: 10px;
+
+    .menu-footer {
+      li {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
   /* woocommerce */
   .woocommerce {
     ul {
@@ -362,6 +442,17 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .site-shop {
+    &__result-count-ordering {
+      @include align-items(flex-start !important);
+      @include flex-direction(column);
+
+      .woocommerce-result-count {
+        margin-bottom: 1rem;
       }
     }
   }

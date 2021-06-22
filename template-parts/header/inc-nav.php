@@ -9,6 +9,10 @@ $carpenter_nav_top_sticky   =   $carpenter_options['carpenter_nav_top_sticky'] ?
     <div class="site-navbar navbar-expand-lg">
         <div class="container">
             <div class="site-navigation_warp d-flex justify-content-lg-end">
+                <button class="navbar-toggler" data-toggle="collapse" data-target=".site-menu">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
                 <div class="site-logo d-flex align-items-center">
                     <a href="<?php echo esc_url( get_home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>">
                         <?php
@@ -19,10 +23,6 @@ $carpenter_nav_top_sticky   =   $carpenter_options['carpenter_nav_top_sticky'] ?
                             endif;
                         ?>
                     </a>
-
-                    <button class="navbar-toggler" data-toggle="collapse" data-target=".site-menu">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
                 </div>
 
                 <div class="site-menu collapse navbar-collapse d-lg-flex justify-content-lg-end">

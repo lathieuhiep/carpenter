@@ -250,7 +250,7 @@ class carpenter_widget_construction_grid extends Widget_Base
                         $terms = get_the_terms( get_the_ID(), 'construction_cat' );
                     ?>
 
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-<?php echo esc_attr(12 / $settings['column_number']); ?>">
+                        <div class="col-6 col-md-4 col-lg-<?php echo esc_attr(12 / $settings['column_number']); ?>">
                             <div class="item-post">
                                 <div class="item-post__thumbnail">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

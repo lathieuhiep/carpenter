@@ -64,12 +64,57 @@
     }
   }
 }
+
 .site-copyright {
   font-size: 12px;
 
   p {
     &:last-child {
       margin: 0;
+    }
+  }
+}
+
+.contact-box {
+  position: fixed;
+  right: 15px;
+  bottom: 90px;
+  z-index: 9999;
+
+  .phone {
+    overflow: hidden;
+    border-radius: 28px;
+    border: solid 1px transparent;
+    padding: 5px 15px 5px 5px;
+    @include transition();
+
+    .icon {
+      color: #ffffff;
+      font-size: 15px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      display: block;
+      background-color: #f00;
+      @include border-radius(50%);
+    }
+
+    .number-phone {
+      padding-left: 10px;
+      margin-right: -105px;
+      visibility: hidden;
+      @include transition();
+    }
+
+    &:hover {
+      border-color: #ccc;
+      background-color: #eeeeee;
+
+      .number-phone {
+        margin-right: 0;
+        visibility: visible;
+      }
     }
   }
 }

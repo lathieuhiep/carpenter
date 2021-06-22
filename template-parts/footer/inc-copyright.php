@@ -8,7 +8,7 @@ $carpenter_copyright = $carpenter_options ['carpenter_footer_copyright_editor'] 
 
 <div class="site-footer__copyright">
     <div class="container">
-        <div class="site-copyright-menu d-flex align-items-center">
+        <div class="site-copyright-menu d-flex align-items-sm-center">
             <div class="site-copyright">
                 <?php echo wp_kses_post( $carpenter_copyright ); ?>
             </div>

@@ -13,7 +13,11 @@
 
 </footer>
 
-<?php wp_footer(); ?>
+<?php
+get_template_part( 'template-parts/inc','contact' );
+
+wp_footer();
+?>
 
 </body>
 </html>
