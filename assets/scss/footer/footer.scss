@@ -75,46 +75,54 @@
   }
 }
 
+.phone-box {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  overflow: hidden;
+
+  a {
+    padding: 5px 25px 5px 5px;
+    border-radius: 28px;
+    border: solid 1px #ccc;
+    background-color: #eeeeee;
+  }
+
+  .icon {
+    color: #ffffff;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    background-color: #f00;
+    @include border-radius(50%);
+  }
+
+  .number-phone {
+    padding-left: 15px;
+    letter-spacing: 1.2px;
+    font-size: 15px;
+  }
+}
+
 .contact-box {
   position: fixed;
   right: 15px;
   bottom: 90px;
   z-index: 9999;
 
-  .phone {
-    overflow: hidden;
-    border-radius: 28px;
-    border: solid 1px transparent;
-    padding: 5px 15px 5px 5px;
-    @include transition();
+  a {
+    display: block;
+  }
 
-    .icon {
-      color: #ffffff;
-      font-size: 15px;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      display: block;
-      background-color: #f00;
-      @include border-radius(50%);
-    }
+  .facebook-chat {
+    margin-top: 10px;
 
-    .number-phone {
-      padding-left: 10px;
-      margin-right: -105px;
-      visibility: hidden;
-      @include transition();
-    }
-
-    &:hover {
-      border-color: #ccc;
-      background-color: #eeeeee;
-
-      .number-phone {
-        margin-right: 0;
-        visibility: visible;
-      }
+    a {
+      font-size: 46px;
+      color: #4267b2;
     }
   }
 }

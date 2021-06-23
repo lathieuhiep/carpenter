@@ -313,35 +313,24 @@ Redux::set_section( $carpenter_opt_name, array(
     'fields'        =>  array(
 
         array(
-            'id'        =>  'carpenter_information_show_hide',
-            'type'      =>  'select',
-            'title'     =>  esc_html__( 'Show Or Hide Information', 'carpenter' ),
-            'default'   =>  1,
-            'options'   =>  array(
-                1   =>  esc_html__( 'Show', 'carpenter' ),
-                0   =>  esc_html__( 'Hide', 'carpenter' )
-            )
-        ),
-
-        array(
-            'id'        =>  'carpenter_information_address',
-            'type'      =>  'text',
-            'title'     =>  esc_html__( 'Address', 'carpenter' ),
-            'default'   =>  '988782, Our Street, S State.',
-        ),
-
-        array(
-            'id'        =>  'carpenter_information_mail',
-            'type'      =>  'text',
-            'title'     =>  esc_html__( 'Mail', 'carpenter' ),
-            'default'   =>  'info@domain.com',
-        ),
-
-        array(
             'id'        =>  'carpenter_information_phone',
             'type'      =>  'text',
             'title'     =>  esc_html__( 'Phone', 'carpenter' ),
-            'default'   =>  '+1 234 567 186',
+            'default'   =>  '0903999690',
+        ),
+
+        array(
+            'id'        =>  'carpenter_information_zalo',
+            'type'      =>  'text',
+            'title'     =>  esc_html__( 'Zalo', 'carpenter' ),
+            'default'   =>  '0903999690',
+        ),
+
+        array(
+            'id'        =>  'carpenter_information_facebook',
+            'type'      =>  'text',
+            'title'     =>  esc_html__( 'Chat Facebook', 'carpenter' ),
+            'default'   =>  'https://www.facebook.com/messages/t/108889991405522',
         ),
 
     )
