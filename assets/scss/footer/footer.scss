@@ -78,15 +78,8 @@
 .phone-box {
   position: fixed;
   left: 10px;
-  bottom: 10px;
   overflow: hidden;
-
-  a {
-    padding: 5px 25px 5px 5px;
-    border-radius: 28px;
-    border: solid 1px #ccc;
-    background-color: #eeeeee;
-  }
+  z-index: 9999;
 
   .icon {
     color: #ffffff;
@@ -99,30 +92,15 @@
     background-color: #f00;
     @include border-radius(50%);
   }
-
-  .number-phone {
-    padding-left: 15px;
-    letter-spacing: 1.2px;
-    font-size: 15px;
-  }
 }
 
 .contact-box {
   position: fixed;
-  right: 15px;
+  right: 0;
   bottom: 90px;
   z-index: 9999;
 
   a {
-    display: block;
-  }
-
-  .facebook-chat {
-    margin-top: 10px;
-
-    a {
-      font-size: 46px;
-      color: #4267b2;
-    }
+    display: inline-block;
   }
 }

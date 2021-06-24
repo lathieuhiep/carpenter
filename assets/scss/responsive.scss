@@ -343,7 +343,50 @@
 
 }
 
+@media ( min-width: 576px ) {
+
+  .phone-box {
+    bottom: 10px;
+
+    a {
+      padding: 5px 25px 5px 5px;
+      border-radius: 28px;
+      border: solid 1px #ccc;
+      background-color: #eeeeee;
+    }
+
+    .number-phone {
+      padding-left: 15px;
+      letter-spacing: 1.2px;
+      font-size: 15px;
+    }
+  }
+
+  .contact-box {
+
+    a {
+      width: 68px;
+    }
+
+    .facebook-chat {
+      margin-top: 5px;
+
+      a {
+        width: 42px;
+        @include transform(translateX(15px));
+      }
+    }
+  }
+
+}
+
 @media (max-width: 575px) {
+
+  #back-top {
+    &.active_top {
+      display: none;
+    }
+  }
 
   .comment-form {
     .comment-fields-row {
@@ -354,6 +397,7 @@
       margin-bottom: 15px;
     }
   }
+
   .woocommerce {
     ul {
       &.products {
@@ -369,6 +413,57 @@
         }
       }
     }
+  }
+
+  .phone-box {
+    bottom: 136px;
+
+    .number-phone {
+      display: none;
+    }
+  }
+
+  .contact-box {
+    bottom: 0;
+    width: 100%;
+    padding: 6px 0;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 8px rgba(29, 36, 62, 0.2);
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+
+    > div {
+      margin: 0 12px;
+    }
+
+    a {
+      width: 50px;
+    }
+
+    .facebook-chat {
+      a {
+        width: 30px;
+      }
+    }
+
+    .phone {
+      a {
+        width: 33px;
+        height: 33px;
+        line-height: 33px;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+
+  }
+
+  .site-footer {
+    padding-bottom: 56px;
   }
 
 }

@@ -9,7 +9,7 @@ $carpenter_information_facebook = $carpenter_options['carpenter_information_face
 
 <?php if ( $carpenter_information_phone ) : ?>
 
-<div class="phone-box">
+<div class="phone-box d-none d-sm-block">
     <a class="d-flex align-items-center" href="tel:<?php echo esc_attr( $carpenter_information_phone ); ?>">
         <span class="icon">
             <i class="fas fa-phone fa-rotate-90"></i>
@@ -24,11 +24,23 @@ $carpenter_information_facebook = $carpenter_options['carpenter_information_face
 <?php endif; ?>
 
 <div class="contact-box">
+    <?php if ( $carpenter_information_phone ) : ?>
+
+        <div class="phone d-sm-none">
+            <a href="tel:<?php echo esc_attr( $carpenter_information_phone ); ?>">
+                <span class="icon">
+                    <i class="fas fa-phone fa-rotate-90"></i>
+                </span>
+            </a>
+        </div>
+
+    <?php endif; ?>
+
     <?php if ( $carpenter_information_zalo ) : ?>
 
     <div class="zalo">
         <a href="https://zalo.me/<?php echo esc_attr( $carpenter_information_zalo ); ?>" target="_blank">
-            <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/zalo-chat.png' ) ) ?>" alt="" />
+            <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/zalo-logo.png' ) ) ?>" alt="" />
         </a>
     </div>
 
@@ -38,7 +50,7 @@ $carpenter_information_facebook = $carpenter_options['carpenter_information_face
 
         <div class="facebook-chat">
             <a href="<?php echo esc_attr( $carpenter_information_facebook ); ?>" target="_blank">
-                <i class="fab fa-facebook-messenger"></i>
+                <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/face-messenger.png' ) ) ?>" alt="" />
             </a>
         </div>
 
