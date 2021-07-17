@@ -471,3 +471,22 @@ if ( ! function_exists( 'carpenter_woo_before_single_product_summary_close' ) ) 
     }
 
 endif;
+
+/* Remove title page shop */
+add_filter('woocommerce_show_page_title', '__return_false');
+
+function carpenter_price_override( $price, $product ) {
+    global $carpenter_options;
+    $carpenter_products_link_contact = $carpenter_options['carpenter_products_link_contact'];
+
+    if ( empty( $product->get_price() ) ) {
+        /*
+         * Replace the word "Free" with whatever text you would like. Also
+         * remember to update the textdomain for translation if required.
+         */
+        $price = '<a class="contact" href="'. esc_url( $carpenter_products_link_contact ) .'">'. __( 'Liên hệ', 'carpenter' ) .'</a>';
+    }
+
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'carpenter_price_override', 100, 2 );

@@ -29,8 +29,8 @@ $carpenter_opt_args = array(
     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
     'allow_sub_menu'       => false,
     // Show the sections below the admin menu item or not
-    'menu_title'           => $carpenter_theme->get( 'Name' ) . esc_html__(' Options', 'carpenter'),
-    'page_title'           => $carpenter_theme->get( 'Name' ) . esc_html__(' Options', 'carpenter'),
+    'menu_title'           => esc_html__('Cài đặt theme', 'carpenter'),
+    'page_title'           => esc_html__('Cài đặt theme', 'carpenter'),
     // You will need to generate a Google API key to use this feature.
     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
     'google_api_key'       => '',
@@ -174,7 +174,7 @@ Redux::set_section( $carpenter_opt_name, array(
 /* Start General Options */
 
 Redux::set_section( $carpenter_opt_name, array(
-    'title'             =>  esc_html__( 'General Options', 'carpenter' ),
+    'title'             =>  esc_html__( 'Cài đặt chung', 'carpenter' ),
     'id'                =>  'carpenter_general',
     'desc'              =>  esc_html__( 'General all config', 'carpenter' ),
     'customizer_width'  =>  '400px',
@@ -183,7 +183,7 @@ Redux::set_section( $carpenter_opt_name, array(
 
 // Favicon Config
 Redux::set_section( $carpenter_opt_name, array(
-    'title'         =>  esc_html__( 'Favicon', 'carpenter' ),
+    'title'         =>  esc_html__( 'Biểu tượng website', 'carpenter' ),
     'id'            =>  'carpenter_favicon_config',
     'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
@@ -192,8 +192,8 @@ Redux::set_section( $carpenter_opt_name, array(
             'id'        =>  'carpenter_favicon_upload',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload Favicon Image', 'carpenter' ),
-            'subtitle'  =>  esc_html__( 'Favicon image for your website', 'carpenter' ),
+            'title'     =>  esc_html__( 'Chọn', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Ảnh biểu tượng website của bạn', 'carpenter' ),
             'desc'      =>  esc_html__( '', 'carpenter' ),
             'default'   =>  false,
         ),
@@ -202,7 +202,7 @@ Redux::set_section( $carpenter_opt_name, array(
 
 //Loading config
 Redux::set_section( $carpenter_opt_name, array(
-    'title'         =>  esc_html__( 'Loading config', 'carpenter' ),
+    'title'         =>  esc_html__( 'Màn hình chờ', 'carpenter' ),
     'id'            =>  'carpenter_general_loading',
     'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
@@ -210,15 +210,15 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'        =>  'carpenter_general_show_loading',
             'type'      =>  'switch',
-            'title'     =>  esc_html__( 'Loading On/Off', 'carpenter' ),
+            'title'     =>  esc_html__( 'Sử dụng', 'carpenter' ),
             'default'   =>  false,
         ),
         array(
             'id'        =>  'carpenter_general_image_loading',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload image loading', 'carpenter' ),
-            'subtitle'  =>  esc_html__( 'Upload image .gif', 'carpenter' ),
+            'title'     =>  esc_html__( 'Chọn', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Sử dụng ảnh .gif', 'carpenter' ),
             'default'   =>  '',
             'required'  =>  array( 'carpenter_general_show_loading', '=', true ),
         ),
@@ -227,9 +227,9 @@ Redux::set_section( $carpenter_opt_name, array(
 
 //Background Options
 Redux::set_section( $carpenter_opt_name, array(
-    'title'             =>  esc_html__( 'Background', 'carpenter' ),
+    'title'             =>  esc_html__( 'Màu nền', 'carpenter' ),
     'id'                =>  'carpenter_background',
-    'desc'              =>  esc_html__( 'Background all config', 'carpenter' ),
+    'desc'              =>  esc_html__( 'Cài đặt màu nền', 'carpenter' ),
     'customizer_width'  =>  '400px',
     'subsection'        => true,
     'fields'            => array(
@@ -238,11 +238,8 @@ Redux::set_section( $carpenter_opt_name, array(
             'output'    =>  'body',
             'type'      =>  'background',
             'clone'     =>  'true',
-            'title'     =>  esc_html__( 'Body background', 'carpenter' ),
-            'subtitle'  =>  esc_html__( 'Body background with image, color, etc.', 'carpenter' ),
-            'hint'      =>  array(
-                'content'   =>  'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-            )
+            'title'     =>  esc_html__( 'Màu nền website', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Nền website cò thể dùng màu hoặc ảnh', 'carpenter' ),
         ),
     ),
 ));
@@ -270,8 +267,8 @@ Redux::set_section( $carpenter_opt_name, array(
             'id'        =>  'carpenter_logo_image',
             'type'      =>  'media',
             'url'       =>  true,
-            'title'     =>  esc_html__( 'Upload logo', 'carpenter' ),
-            'subtitle'  =>  esc_html__( 'logo image for your website', 'carpenter' ),
+            'title'     =>  esc_html__( 'Chọn logo', 'carpenter' ),
+            'subtitle'  =>  esc_html__( 'Logo website', 'carpenter' ),
             'desc'      =>  esc_html__( '', 'carpenter' ),
             'default'   =>  false,
         ),
@@ -280,7 +277,7 @@ Redux::set_section( $carpenter_opt_name, array(
             'id'                => 'carpenter_logo_images_size',
             'type'              => 'dimensions',
             'units'             => array( 'em', 'px', '%' ),
-            'title'             => esc_html__( 'Set width/height for logo', 'carpenter' ),
+            'title'             => esc_html__( 'Chiều rộng / Chiều cao', 'carpenter' ),
             'subtitle'          => esc_html__( '', 'carpenter' ),
             'units_extended'    => 'true',
             'default'           => array(
@@ -306,7 +303,7 @@ Redux::set_section( $carpenter_opt_name, array(
 
 // information
 Redux::set_section( $carpenter_opt_name, array(
-    'title'         =>  esc_html__( 'Information', 'carpenter' ),
+    'title'         =>  esc_html__( 'Liên hệ', 'carpenter' ),
     'id'            =>  'carpenter_information_config',
     'desc'          =>  esc_html__( '', 'carpenter' ),
     'subsection'    =>  true,
@@ -315,15 +312,15 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'        =>  'carpenter_information_phone',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Phone', 'carpenter' ),
-            'default'   =>  '0903999690',
+            'title'     =>  esc_html__( 'Điện thoại', 'carpenter' ),
+            'default'   =>  '0948131327',
         ),
 
         array(
             'id'        =>  'carpenter_information_zalo',
             'type'      =>  'text',
             'title'     =>  esc_html__( 'Zalo', 'carpenter' ),
-            'default'   =>  '0903999690',
+            'default'   =>  '0948131327',
         ),
 
         array(
@@ -340,7 +337,7 @@ Redux::set_section( $carpenter_opt_name, array(
 
 /* Start Blog Option */
 Redux::set_section( $carpenter_opt_name, array(
-    'title'             =>  esc_html__( 'Blog Options', 'carpenter' ),
+    'title'             =>  esc_html__( 'Bài viết', 'carpenter' ),
     'id'                =>  'carpenter_blog_option',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-blogger',
@@ -349,8 +346,7 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'        =>  'carpenter_blog_sidebar_archive',
             'type'      =>  'image_select',
-            'title'     =>  esc_html__( 'Sidebar Archive', 'carpenter' ),
-            'desc'      =>  esc_html__( 'Use for archive, index, page search', 'carpenter' ),
+            'title'     =>  esc_html__( 'Sidebar danh mục', 'carpenter' ),
             'default'   =>  'right',
             'options'   =>  array(
                 'hide' =>  array(
@@ -374,7 +370,7 @@ Redux::set_section( $carpenter_opt_name, array(
 	    array(
 		    'id'        =>  'carpenter_blog_per_row',
 		    'type'      =>  'select',
-		    'title'     =>  esc_html__( 'Blog Per Row', 'carpenter' ),
+		    'title'     =>  esc_html__( 'Bố cục', 'carpenter' ),
 		    'default'   =>  2,
 		    'options'   =>  array(
 			    2   =>  '2 Column',
@@ -387,7 +383,7 @@ Redux::set_section( $carpenter_opt_name, array(
 ));
 
 Redux::set_section( $carpenter_opt_name, array(
-	'title'         =>  esc_html__( 'Single Post', 'carpenter' ),
+	'title'         =>  esc_html__( 'Bài viết chi tiết', 'carpenter' ),
 	'id'            =>  'carpenter_single_post_option',
 	'desc'          =>  esc_html__( '', 'carpenter' ),
 	'subsection'    =>  true,
@@ -396,7 +392,7 @@ Redux::set_section( $carpenter_opt_name, array(
 		array(
 			'id'        =>  'carpenter_blog_sidebar_single',
 			'type'      =>  'image_select',
-			'title'     =>  esc_html__( 'Sidebar Single', 'carpenter' ),
+			'title'     =>  esc_html__( 'Sidebar bài viết', 'carpenter' ),
 			'default'   =>  'right',
 			'options'   =>  array(
 				'hide' =>  array(
@@ -420,14 +416,14 @@ Redux::set_section( $carpenter_opt_name, array(
 		array(
 			'id'        =>  'carpenter_on_off_share_single',
 			'type'      =>  'switch',
-			'title'     =>  esc_html__( 'On/Off Share Post Single', 'carpenter' ),
+			'title'     =>  esc_html__( 'Chia sẻ bài viết', 'carpenter' ),
 			'default'   =>  true,
 		),
 
 		array(
 			'id'            =>  'carpenter_related_post_limit',
 			'type'          =>  'slider',
-			'title'         =>  esc_html__( 'Related Post Limit', 'carpenter' ),
+			'title'         =>  esc_html__( 'Hiển thị bài viết liên quan', 'carpenter' ),
 			'min'           =>  1,
 			'step'          =>  1,
 			'max'           =>  250,
@@ -441,7 +437,7 @@ Redux::set_section( $carpenter_opt_name, array(
 
 /* Start Social Network */
 Redux::set_section( $carpenter_opt_name, array(
-    'title'             =>  esc_html__( 'Social Network', 'carpenter' ),
+    'title'             =>  esc_html__( 'Mạng xã hội', 'carpenter' ),
     'id'                =>  'carpenter_social_network',
     'customizer_width'  =>  '400px',
     'icon'              =>  'el el-globe-alt',
@@ -491,7 +487,7 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'            =>  'carpenter_product_limit',
             'type'          =>  'slider',
-            'title'         =>  esc_html__( 'Product Limit Page Shop', 'carpenter' ),
+            'title'         =>  esc_html__( 'Số lượng hiển thị', 'carpenter' ),
             'min'           =>  1,
             'step'          =>  1,
             'max'           =>  250,
@@ -502,7 +498,7 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'        =>  'carpenter_products_per_row',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Products Per Row', 'carpenter' ),
+            'title'     =>  esc_html__( 'Bố cục', 'carpenter' ),
             'default'   =>  4,
             'options'   =>  array(
                 3   =>  '3 Column',
@@ -514,14 +510,20 @@ Redux::set_section( $carpenter_opt_name, array(
         array(
             'id'        =>  'carpenter_sidebar_woo',
             'type'      =>  'select',
-            'title'     =>  esc_html__( 'Position Sidebar Woocommerce', 'carpenter' ),
-            'desc'          =>  esc_html__( 'Position Sidebar Woocommerce', 'carpenter' ),
+            'title'     =>  esc_html__( 'Vị trí sidebar', 'carpenter' ),
             'default'   =>  'left',
             'options'   =>  array(
                 'left'  =>  'Left',
                 'right' =>  'Right',
                 'hide'  =>  'Hide',
             )
+        ),
+
+        array(
+            'id'        =>  'carpenter_products_link_contact',
+            'type'      =>  'text',
+            'title'     =>  esc_html__( 'Liên hệ', 'carpenter' ),
+            'default'   =>  '#',
         ),
     )
 ));

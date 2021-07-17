@@ -97,7 +97,6 @@
 
 .redux-sidebar .redux-group-menu li a {
     color: #e7e7e7 !important;
-    font-family: 'Open Sans', sans-serif;
     border: 0 !important;
     font-weight: 400 !important;
     font-size: 12px;
@@ -118,7 +117,6 @@
     padding: 10px 0;
     text-align: left;
     text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
     font-weight: 800;
     font-size: 18px;
     line-height: 50px;
@@ -188,7 +186,6 @@
     text-align: center;
     text-transform: uppercase;
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .redux-sidebar .redux-menu-warning i,

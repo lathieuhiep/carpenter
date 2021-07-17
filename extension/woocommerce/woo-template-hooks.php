@@ -38,7 +38,7 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 add_action( 'carpenter_woo_shopping_cart', 'carpenter_get_cart', 5 );
 
-add_action( 'carpenter_woo_button_quick_view', 'carpenter_button_quick_view', 5 );
+//add_action( 'carpenter_woo_button_quick_view', 'carpenter_button_quick_view', 5 );
 
 add_action( 'woocommerce_before_main_content', 'carpenter_woo_before_main_content', 10 );
 
